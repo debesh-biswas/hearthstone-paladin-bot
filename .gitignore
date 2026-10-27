@@ -1,0 +1,18 @@
+# course package (download separately, see task.md §6)
+pkg/
+# envs, caches, outputs
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+games/
+dist/
+*.zip
+scratch/
+.DS_Store
+# local assistant config
+CLAUDE.md
+AGENTS.md
+.claude/
+.codex/
