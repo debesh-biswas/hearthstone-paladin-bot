@@ -1,0 +1,279 @@
+{
+  "decks": {
+    "original-zoo": {
+      "games": 4,
+      "wins": 1,
+      "illegal": 0,
+      "opponent_illegal": 0,
+      "timeouts": 0,
+      "forfeits": 0,
+      "first": 2,
+      "max_latency_s": 11.452975749969482
+    },
+    "recovery-zoo": {
+      "games": 4,
+      "wins": 1,
+      "illegal": 2,
+      "opponent_illegal": 0,
+      "timeouts": 0,
+      "forfeits": 0,
+      "first": 2,
+      "max_latency_s": 14.851079940795898
+    },
+    "persistent-token-druid": {
+      "games": 4,
+      "wins": 1,
+      "illegal": 0,
+      "opponent_illegal": 1,
+      "timeouts": 0,
+      "forfeits": 0,
+      "first": 2,
+      "max_latency_s": 22.07224678993225
+    }
+  },
+  "model_ids": [
+    [
+      "claude-haiku-5-5",
+      "medium"
+    ]
+  ],
+  "selected_card_plays": [
+    {
+      "game": "recovery-zoo__control-paladin__seat1",
+      "seq": 17,
+      "turn": 13,
+      "card": "Mortal Coil",
+      "action": {
+        "type": "play_card",
+        "card": 34,
+        "target": 40
+      }
+    },
+    {
+      "game": "recovery-zoo__control-paladin__seat1",
+      "seq": 28,
+      "turn": 19,
+      "card": "Shadowflame",
+      "action": {
+        "type": "play_card",
+        "card": 33,
+        "target": 32
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat1",
+      "seq": 33,
+      "turn": 21,
+      "card": "Soul of the Forest",
+      "action": {
+        "type": "play_card",
+        "card": 26
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat1",
+      "seq": 34,
+      "turn": 21,
+      "card": "Savage Roar",
+      "action": {
+        "type": "play_card",
+        "card": 20
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat1",
+      "seq": 35,
+      "turn": 21,
+      "card": "Power of the Wild",
+      "action": {
+        "type": "play_card",
+        "card": 13,
+        "choose": 80
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat1",
+      "seq": 41,
+      "turn": 23,
+      "card": "Savage Roar",
+      "action": {
+        "type": "play_card",
+        "card": 21
+      }
+    },
+    {
+      "game": "recovery-zoo__control-paladin__seat2",
+      "seq": 29,
+      "turn": 16,
+      "card": "Mortal Coil",
+      "action": {
+        "type": "play_card",
+        "card": 67,
+        "target": 15
+      }
+    },
+    {
+      "game": "recovery-zoo__control-paladin__seat2",
+      "seq": 30,
+      "turn": 16,
+      "card": "Shadowflame",
+      "action": {
+        "type": "play_card",
+        "card": 66,
+        "target": 63
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat2",
+      "seq": 14,
+      "turn": 8,
+      "card": "Violet Teacher",
+      "action": {
+        "type": "play_card",
+        "card": 56,
+        "position": 2
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat2",
+      "seq": 17,
+      "turn": 10,
+      "card": "Violet Teacher",
+      "action": {
+        "type": "play_card",
+        "card": 55,
+        "position": 4
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat2",
+      "seq": 27,
+      "turn": 16,
+      "card": "Power of the Wild",
+      "action": {
+        "type": "play_card",
+        "card": 45,
+        "choose": 92
+      }
+    },
+    {
+      "game": "persistent-token-druid__control-paladin__seat2",
+      "seq": 32,
+      "turn": 20,
+      "card": "Cult Master",
+      "action": {
+        "type": "play_card",
+        "card": 61,
+        "position": 1
+      }
+    },
+    {
+      "game": "recovery-zoo__greedy-mage__seat1",
+      "seq": 23,
+      "turn": 15,
+      "card": "Mortal Coil",
+      "action": {
+        "type": "play_card",
+        "card": 34,
+        "target": 49
+      }
+    },
+    {
+      "game": "recovery-zoo__greedy-mage__seat1",
+      "seq": 31,
+      "turn": 19,
+      "card": "Shadowflame",
+      "action": {
+        "type": "play_card",
+        "card": 33,
+        "target": 32
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat1",
+      "seq": 31,
+      "turn": 21,
+      "card": "Violet Teacher",
+      "action": {
+        "type": "play_card",
+        "card": 23
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat1",
+      "seq": 32,
+      "turn": 21,
+      "card": "Power of the Wild",
+      "action": {
+        "type": "play_card",
+        "card": 12,
+        "choose": 92
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat1",
+      "seq": 44,
+      "turn": 25,
+      "card": "Cult Master",
+      "action": {
+        "type": "play_card",
+        "card": 28
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat1",
+      "seq": 52,
+      "turn": 29,
+      "card": "Power of the Wild",
+      "action": {
+        "type": "play_card",
+        "card": 13,
+        "choose": 110
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat1",
+      "seq": 60,
+      "turn": 33,
+      "card": "Savage Roar",
+      "action": {
+        "type": "play_card",
+        "card": 20
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat2",
+      "seq": 15,
+      "turn": 8,
+      "card": "Violet Teacher",
+      "action": {
+        "type": "play_card",
+        "card": 56,
+        "position": 2
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat2",
+      "seq": 19,
+      "turn": 10,
+      "card": "Violet Teacher",
+      "action": {
+        "type": "play_card",
+        "card": 55,
+        "position": 4
+      }
+    },
+    {
+      "game": "persistent-token-druid__greedy-mage__seat2",
+      "seq": 33,
+      "turn": 16,
+      "card": "Power of the Wild",
+      "action": {
+        "type": "play_card",
+        "card": 45,
+        "choose": 84
+      }
+    }
+  ],
+  "simple_face_lethal_before_trade_flags": []
+}

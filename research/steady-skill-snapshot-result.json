@@ -1,0 +1,8 @@
+{
+  "seq": 34,
+  "action": {
+    "type": "play_card",
+    "card": 22,
+    "position": 1
+  }
+}

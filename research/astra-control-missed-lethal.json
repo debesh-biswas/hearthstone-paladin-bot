@@ -1,0 +1,32 @@
+{
+  "source_game": "games/astra/control-paladin__vs__steady-paladin/g_20261027_000001",
+  "seed": 2000,
+  "turn": 19,
+  "seq": 41,
+  "replayed_accepted_actions": 68,
+  "alternative_actions": [
+    {
+      "type": "attack",
+      "attacker": 63,
+      "target": 4
+    },
+    {
+      "type": "attack",
+      "attacker": 54,
+      "target": 4
+    },
+    {
+      "type": "attack",
+      "attacker": 50,
+      "target": 4
+    },
+    {
+      "type": "attack",
+      "attacker": 41,
+      "target": 4
+    }
+  ],
+  "winner": 2,
+  "reason": "hero_death",
+  "claim": "Recorded position has a four-attack immediate win for Steady; observed game result remains a loss."
+}

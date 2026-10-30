@@ -1,0 +1,354 @@
+[
+  {
+    "match": "aggro-paladin__vs__steady-paladin",
+    "steady_seat": 2,
+    "first_player": 2,
+    "steady_first": true,
+    "steady_win": true,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 2,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 17,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 207.77,
+      "decisions": {
+        "1": 32,
+        "2": 32
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "aggro-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "control-paladin__vs__steady-paladin",
+    "steady_seat": 2,
+    "first_player": 2,
+    "steady_first": true,
+    "steady_win": false,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 26,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 281.962,
+      "decisions": {
+        "1": 44,
+        "2": 64
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "control-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "steady-paladin__vs__aggro-paladin",
+    "steady_seat": 1,
+    "first_player": 2,
+    "steady_first": false,
+    "steady_win": false,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 2,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 21,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 233.09,
+      "decisions": {
+        "1": 34,
+        "2": 43
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "aggro-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "steady-paladin__vs__control-paladin",
+    "steady_seat": 1,
+    "first_player": 2,
+    "steady_first": false,
+    "steady_win": false,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 2,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 29,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 345.106,
+      "decisions": {
+        "1": 51,
+        "2": 47
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "control-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "steady-paladin__vs__tempo-mage",
+    "steady_seat": 1,
+    "first_player": 2,
+    "steady_first": false,
+    "steady_win": false,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 2,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 19,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 203.739,
+      "decisions": {
+        "1": 38,
+        "2": 33
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "tempo-mage",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "steady-paladin__vs__zoo-warlock",
+    "steady_seat": 1,
+    "first_player": 2,
+    "steady_first": false,
+    "steady_win": true,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 10,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 136.067,
+      "decisions": {
+        "1": 16,
+        "2": 15
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "zoo-warlock",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "tempo-mage__vs__steady-paladin",
+    "steady_seat": 2,
+    "first_player": 2,
+    "steady_first": true,
+    "steady_win": true,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 2,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 29,
+      "illegal_counts": {
+        "1": 1,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 296.241,
+      "decisions": {
+        "1": 54,
+        "2": 54
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "tempo-mage",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "match": "zoo-warlock__vs__steady-paladin",
+    "steady_seat": 2,
+    "first_player": 2,
+    "steady_first": true,
+    "steady_win": false,
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 2000,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 2,
+      "turns": 20,
+      "illegal_counts": {
+        "1": 0,
+        "2": 1
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 260.864,
+      "decisions": {
+        "1": 41,
+        "2": 41
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "zoo-warlock",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  }
+]

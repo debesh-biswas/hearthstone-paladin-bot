@@ -1,0 +1,54 @@
+{
+  "completed_games": [
+    {
+      "candidate": "baseline-paladin",
+      "opponent": "greedy-mage",
+      "seat": 1,
+      "win": true,
+      "turns": 13
+    },
+    {
+      "candidate": "baseline-paladin",
+      "opponent": "greedy-mage",
+      "seat": 2,
+      "win": false,
+      "turns": 25
+    },
+    {
+      "candidate": "baseline-paladin",
+      "opponent": "haiku-paladin",
+      "seat": 1,
+      "win": true,
+      "turns": 21
+    },
+    {
+      "candidate": "baseline-paladin",
+      "opponent": "haiku-paladin",
+      "seat": 2,
+      "win": false,
+      "turns": 21
+    },
+    {
+      "candidate": "steady-paladin",
+      "opponent": "greedy-mage",
+      "seat": 1,
+      "win": true,
+      "turns": 23
+    }
+  ],
+  "counts": {
+    "hero_death": 5,
+    "illegal_counts": 0,
+    "timeouts": 0,
+    "forfeit_exit": 7
+  },
+  "model_ids": [
+    [
+      "claude-haiku-5-5",
+      "medium"
+    ]
+  ],
+  "reported_cost_usd_list_price": 0.500745,
+  "estimated_max_decision_latency_s": 19.468644380569458,
+  "recorded_model_actions": 335
+}

@@ -512,3 +512,149 @@ Argent Commander 2, Flamestrike 1.
 - **Mulligan for curve:** keep 1–3 drops. Going second also keep a 4-drop (The Coin).
 - **Play around AoE:** don't overextend into Flamestrike (Mage, 7 mana) or Consecration/Hellfire/Lightning Storm when already ahead on board.
 - **Sequence:** buffs/positional minions before attacks; attack before playing minions that care about deaths; draw spells early in the turn.
+
+### 3.6 Deck skills built (`decks/<name>/`)
+Each folder is a standalone playable skill: `SKILL.md` (playbook, `model: haiku`), `deck.json` (legal 30, validator `[]`),
+`references/guide.md` (in-depth guide: mulligan, curve, card usage, trades, lethal, matchups, script hints, sources).
+Play one with `hs-arena play --p1 skill:decks/<name> --p2 greedy`. Not yet tested in games.
+
+| Deck | Class | Style | Core idea in this pool |
+|---|---|---|---|
+| `zoo-warlock` | Warlock | Aggro board | Cheap minions + temporary buffs, Life Tap; top end Sea Giant ×2, Frostwolf, Nightblade, Argent Commander |
+| `face-hunter` | Hunter | Aggro face | Avg cost 2.47; Beasts for Kill Command, Charge, Bow, Steady Shot every turn |
+| `midrange-hunter` | Hunter | Midrange | 18 Beasts, Houndmaster, Highmane, Tiger, King Krush; Kill Command finisher |
+| `aggro-warrior` | Warrior | Tempo/weapons | 5 weapons, Faerie Dragon, Execute + Taskmaster, Kor'kron, Grommash |
+| `midrange-shaman` | Shaman | Midrange | Feral Spirit/Flametongue/Storm/Hex control, Doomhammer + Rockbiter, Al'Akir |
+| `tempo-mage` | Mage | Tempo | Wyrm/Apprentice/Juggler, Faerie Dragon, Tiger, 2× Polymorph, burn finish |
+| `aggro-paladin` | Paladin | Aggro-midrange | Divine Shield bodies, Truesilver, Kings, Aldor, Hammer, Tirion |
+| `control-paladin` | Paladin | Control | Pyromancer + Equality (turn 6), Consecration, Taunts, Tirion, Alexstrasza |
+| `tempo-rogue` | Rogue | Tempo | Backstab/Eviscerate/SI:7/Sap, Faerie Dragon, Edwin (3 mana), Combo-first ordering |
+| `midrange-druid` | Druid | Midrange | Big bodies from turn 4, Wild Growth, Choose One defaults by name, Savage Roar for lethal |
+
+Recurring finding across guides: vs Greedy Mage, **untargetable/stealth minions** (Faerie Dragon, Stranglethorn Tiger, Jungle Panther)
+blank its removal, it Polymorphs only minions with atk+hp ≥ ~6, and its only AoE is one 7-mana Flamestrike.
+
+---
+
+## 4. Tournament results
+
+### 4.1 Stage A: greedy-bot pilot round-robin (2026-10-27)
+`python tools/tournament.py a --games 100`: 11 decks (10 ours + Greedy Mage), 55 pairings x 100 games (50 per seat orientation, same seeds), 5,500 games, 70 s. All decks piloted by the built-in greedy bot, which does **not** follow the guides. This measures deck strength under a simple one-action-at-a-time pilot. Decks with complex decisions (Overload, Choose One, Combo) are likely underrated. Elo = Bradley-Terry fit.
+
+| Rank | Deck | Elo | Win % | Games | Forfeits | Illegal | Timeouts | Voided |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | aggro-paladin | 1647 | 70.5 | 1000 | 0 | 0 | 0 | 0 |
+| 2 | control-paladin | 1630 | 68.3 | 1000 | 0 | 0 | 0 | 0 |
+| 3 | zoo-warlock | 1586 | 62.3 | 1000 | 0 | 0 | 0 | 0 |
+| 4 | tempo-mage | 1534 | 54.9 | 1000 | 0 | 0 | 0 | 0 |
+| 5 | greedy-mage | 1529 | 54.1 | 1000 | 0 | 0 | 0 | 0 |
+| 6 | face-hunter | 1524 | 53.4 | 1000 | 0 | 0 | 0 | 0 |
+| 7 | aggro-warrior | 1505 | 50.6 | 1000 | 0 | 0 | 0 | 0 |
+| 8 | midrange-hunter | 1456 | 43.4 | 1000 | 0 | 0 | 0 | 0 |
+| 9 | tempo-rogue | 1419 | 38.2 | 1000 | 0 | 0 | 0 | 0 |
+| 10 | midrange-druid | 1351 | 29.2 | 1000 | 0 | 0 | 0 | 0 |
+| 11 | midrange-shaman | 1318 | 25.1 | 1000 | 0 | 0 | 0 | 0 |
+
+Win % of row deck vs column deck:
+
+| vs | aggro-pala | control-pa | zoo-warloc | tempo-mage | greedy-mag | face-hunte | aggro-warr | midrange-h | tempo-rogu | midrange-d | midrange-s |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| aggro-paladin | – | 51 | 61 | 68 | 59 | 70 | 76 | 73 | 78 | 82 | 87 |
+| control-paladin | 49 | – | 54 | 70 | 44 | 76 | 73 | 68 | 88 | 80 | 81 |
+| zoo-warlock | 39 | 46 | – | 54 | 67 | 64 | 51 | 68 | 69 | 79 | 86 |
+| tempo-mage | 32 | 30 | 46 | – | 52 | 46 | 53 | 63 | 70 | 79 | 78 |
+| greedy-mage | 41 | 56 | 33 | 48 | – | 40 | 51 | 56 | 68 | 76 | 72 |
+| face-hunter | 30 | 24 | 36 | 54 | 60 | – | 44 | 64 | 57 | 77 | 88 |
+| aggro-warrior | 24 | 27 | 49 | 47 | 49 | 56 | – | 54 | 64 | 71 | 65 |
+| midrange-hunter | 27 | 32 | 32 | 37 | 44 | 36 | 46 | – | 40 | 63 | 77 |
+| tempo-rogue | 22 | 12 | 31 | 30 | 32 | 43 | 36 | 60 | – | 57 | 59 |
+| midrange-druid | 18 | 20 | 21 | 21 | 24 | 23 | 29 | 37 | 43 | – | 56 |
+| midrange-shaman | 13 | 19 | 14 | 22 | 28 | 12 | 35 | 23 | 41 | 44 | – |
+
+First player won 58.4% of 5500 decided games.
+
+**Readings:**
+- Paladins on top: Divine Shield and sticky bodies plus Consecration/Truesilver play well even when piloted simply.
+- Zoo is the strongest non-Paladin deck and beats Greedy Mage 67%.
+- Vs Greedy Mage specifically: zoo-warlock 67, face-hunter 60, aggro-paladin 59, tempo-mage 52, control-paladin only 44.
+- Shaman, Druid and Rogue are at the bottom. These are the decks whose guides depend most on sequencing (Overload, Choose One, Combo), so the greedy pilot likely undersells them.
+- First player wins 58%.
+
+### 4.2 Stage B: skills played by Haiku from their own SKILL.md (2026-10-27)
+`python tools/tournament.py b --decks aggro-paladin,control-paladin,zoo-warlock,tempo-mage --vs-greedy 6 --pair-games 4`: top 4 of Stage A, Haiku (medium effort), playbook-only skills. 6 games each vs Greedy Mage (`--p2 greedy`), 4 games per skill pairing, seats split evenly; 48 games. The first attempt lost 16 skill-vs-skill games to our account's usage limit (Claude 429, `forfeit_exit`). Those were deleted and replayed, and the script now counts such failures as voided.
+
+| Rank | Deck | Elo | Win % | Games | Forfeits | Illegal | Timeouts | Voided |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 1 | aggro-paladin | 1676 | 77.8 | 18 | 0 | 0 | 0 | 0 |
+| 2 | control-paladin | 1556 | 61.1 | 18 | 0 | 0 | 0 | 0 |
+| 3 | tempo-mage | 1518 | 55.6 | 18 | 0 | 0 | 0 | 0 |
+| 4 | zoo-warlock | 1482 | 50.0 | 18 | 0 | 0 | 0 | 0 |
+| 5 | greedy-mage | 1269 | 16.7 | 24 | 0 | 0 | 0 | 0 |
+
+Win % of row deck vs column deck:
+
+| vs | aggro-pala | control-pa | tempo-mage | zoo-warloc | greedy-mag |
+|---|---:|---:|---:|---:|---:|
+| aggro-paladin | – | 50 | 100 | 75 | 83 |
+| control-paladin | 50 | – | 75 | 25 | 83 |
+| tempo-mage | 0 | 25 | – | 75 | 100 |
+| zoo-warlock | 25 | 75 | 25 | – | 67 |
+| greedy-mage | 17 | 17 | 0 | 33 | – |
+
+First player won 45.8% of 48 decided games.
+
+All 48 games ended by hero death: **0 forfeits, 0 illegal actions, 0 timeouts**. Median game 19 turns.
+
+Decision latency (`python tools/latency.py games/stageb`, gap between consecutive in-turn actions):
+
+```
+aggro-paladin    decisions  488  median   1.7s  p95   3.6s  max   7.1s
+control-paladin  decisions  482  median   1.6s  p95   2.9s  max  10.6s
+tempo-mage       decisions  471  median   1.4s  p95   3.4s  max   7.6s
+zoo-warlock      decisions  468  median   1.4s  p95   2.9s  max   6.7s
+```
+
+**Readings (small samples: 4–6 games per cell, so +/- ~20 points):**
+- Haiku follows the guides well: Greedy Mage won only 4/24 (16.7%) against the four skills, vs 54% overall in Stage A.
+- vs Greedy Mage: tempo-mage 6/6, aggro-paladin 5/6, control-paladin 5/6, zoo-warlock 4/6.
+- aggro-paladin is the strongest overall (77.8%) and the only one top-2 in both stages.
+- Playbook-only skills are reliable: worst decision 10.6 s against a 180 s limit.
+- Not yet measured: Mystery Bot (Bot 2) and Astra. Stage B covers only the Greedy Mage and these four decks.
+
+### 4.3 Steady Paladin versus established local skills (2026-10-27)
+
+Source: eight completed games in `games/astra/`. The directory label does **not** mean the course's Astra boss was tested: both seats used `claude-haiku-5-5`, medium effort. The recorded Steady playbook and submitted card multiset in both Control matchups match the saved concept-led skill and deck. The saved skill defaults to Luna; these runs used Haiku.
+
+Seed 2000 selected **P2 as first player in all eight games**. Seat swaps therefore gave each deck one first-player game per matchup. Read `first_player` from results rather than equating P1 with going first.
+
+| Opponent | Steady went first | Steady went second | Steady record |
+|---|---|---|---:|
+| aggro-paladin | Won, 17 turns | Lost, 21 turns | 1–1 |
+| control-paladin | Lost, 26 turns | Lost, 29 turns | 0–2 |
+| tempo-mage | Won, 29 turns | Lost, 19 turns | 1–1 |
+| zoo-warlock | Lost, 20 turns | Won, 10 turns | 1–1 |
+| Total | 2–2 | 1–3 | **3–5** |
+
+All eight ended by hero death: **0 forfeits and 0 timeouts**. Steady had one illegal action against Zoo; Tempo Mage had one against Steady. Results list **330 Steady decisions**. `tools/latency.py` samples 230 consecutive in-turn tool-call gaps for Steady (median 1.5 s, max 6.0 s); these exclude turn-boundary/startup waits and are not all decisions. The largest such sampled gap across the decks is Control's 7.3 s. A separate state-publication-to-action estimate from saved deadline timestamps and action-file modification times gives Steady a maximum of approximately **32.20 s**, still below 180 s. Timing methods should not be conflated.
+
+**Replay finding changes the interpretation:** Steady had an immediate win in one Control loss. In `control-paladin__vs__steady-paladin`, turn 19 / P2 seq 41, Cairne (4), Blood Knight (6), Aldor (3) and Worgen (2) were all attack-ready and legally able to hit the enemy hero: **15 attack versus 14 health, zero armor, no Taunts, no secrets**. After playing Protector, Haiku traded Knight into Darkscale Healer at seq 42 instead. Replaying the preceding 68 accepted engine actions and replacing the turn with four face attacks produced an immediate Steady win. Evidence: `research/astra-control-missed-lethal.json`. The official local result remains a loss; do not rewrite the 3–5 record as an adjusted win rate.
+
+The other Control game shows real structural pressure: early Knight was reduced to one attack by Aldor, the board was reset by Pyromancer/Equality on turn 19, and Control restored itself to 30 health later. In the missed-lethal game, Control eventually cleared five Steady minions with Equality/Avenging Wrath on turn 24, but that recovery happened **after the available winning turn**. Blood Knight did successfully strip Tirion's shield and become a 6/6 in that game.
+
+**Decision:** Steady is no longer treated as an established improvement over the local field, but these eight games do not justify rejecting it. Two games per matchup, one seed and a demonstrated missed lethal leave substantial uncertainty. Keep original aggro Paladin as the strongest currently measured Haiku benchmark; explore Recovery Zoo and persistent-token Druid as distinct alternatives. Details: `research/post-comparison-alternatives.md`. No new model games were launched for this replay review.
+
+### 4.4 Alternative-deck Haiku screen (2026-10-28)
+
+Twelve local games: original Zoo, Recovery Zoo and persistent-token Druid each played Haiku Control Paladin and built-in Greedy Mage in both seat orientations, seed 280001. All model seats used Haiku 5.5 at medium effort. P1 went first for this seed; each candidate went first twice. Original/Recovery Zoo share an identical new concept-led research playbook. The original Zoo cards match the established deck, but its playbook differs from Stage B, so historical result comparisons also change pilot instructions.
+
+| Candidate | vs Control Paladin | vs Greedy Mage | Overall |
+|---|---:|---:|---:|
+| Original Zoo (shared research playbook) | 1–1 | 0–2 | 1–3 |
+| Recovery Zoo | 0–2 | 1–1 | 1–3 |
+| Persistent-token Druid | 1–1 | 0–2 | 1–3 |
+
+All 12 ended by hero death: **0 forfeits, 0 timeouts**. Three illegal actions total: two by Recovery Zoo in one Mage game, one by Control against Druid. Maximum estimated state-publication-to-action latency **22.07 s** across all model seats. No network/quota failures or discarded attempts.
+
+Replay evidence: Recovery cast Coil and Shadowflame three times each, but never drew Owl. One Shadowflame sacrificed a ready Giant before attacking; offline replay verified eight extra face damage was available before the same clear. Druid's Soul produced a replacement Treant after Equality plus a weapon kill, but its second Roar was unnecessary for the final lethal. Neither example proves a deck-strength advantage.
+
+**Decision:** no new draft is promoted. Retain the existing benchmark decks and save research skills in `research/alternative-skills/`. The next comparison should control for playbook behavior as well as deck contents. One fresh seed and two games per matchup cannot establish a ranking. Full protocol, statistics, limitations and observations: `research/alternatives-evaluation.md`; raw games: `games/alternatives-haiku-20261028/`.

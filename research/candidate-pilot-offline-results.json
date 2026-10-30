@@ -1,0 +1,28 @@
+{
+  "method": "Static loaders and recorded public states; no match runner",
+  "packages": {
+    "burst-shaman": {
+      "skill_static": "pass",
+      "deck_static": "pass",
+      "same_model_deck": true,
+      "pilot_sha256": "1aff7e5acf9dac07c5088034325ff495faa3bcab4bb5ed4382e2fa7b3a3ee914"
+    },
+    "infernal-warlock": {
+      "skill_static": "pass",
+      "deck_static": "pass",
+      "same_model_deck": true,
+      "pilot_sha256": "1aff7e5acf9dac07c5088034325ff495faa3bcab4bb5ed4382e2fa7b3a3ee914"
+    },
+    "pressure-hunter": {
+      "skill_static": "pass",
+      "deck_static": "pass",
+      "same_model_deck": true,
+      "pilot_sha256": "1aff7e5acf9dac07c5088034325ff495faa3bcab4bb5ed4382e2fa7b3a3ee914"
+    }
+  },
+  "states": 567,
+  "illegal": 0,
+  "fallbacks": 0,
+  "max_seconds": 0.00455745798535645,
+  "failures": []
+}

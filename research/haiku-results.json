@@ -1,0 +1,553 @@
+[
+  {
+    "candidate": "baseline-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/baseline-paladin__greedy-mage__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 1,
+      "turns": 13,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 78.529,
+      "decisions": {
+        "1": 27,
+        "2": 20
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "greedy",
+          "kind": "greedy"
+        }
+      ]
+    }
+  },
+  {
+    "candidate": "baseline-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/baseline-paladin__greedy-mage__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 1,
+      "turns": 25,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 152.472,
+      "decisions": {
+        "1": 47,
+        "2": 47
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "greedy",
+          "kind": "greedy"
+        },
+        {
+          "index": 2,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "candidate": "baseline-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/baseline-paladin__haiku-paladin__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 1,
+      "turns": 21,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 227.904,
+      "decisions": {
+        "1": 41,
+        "2": 33
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "candidate": "baseline-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/baseline-paladin__haiku-paladin__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 1,
+      "turns": 21,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 259.19,
+      "decisions": {
+        "1": 38,
+        "2": 39
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        }
+      ]
+    }
+  },
+  {
+    "candidate": "steady-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/steady-paladin__greedy-mage__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "hero_death",
+      "first_player": 1,
+      "turns": 23,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 142.241,
+      "decisions": {
+        "1": 51,
+        "2": 40
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "greedy",
+          "kind": "greedy"
+        }
+      ]
+    }
+  },
+  {
+    "candidate": "steady-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/steady-paladin__greedy-mage__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "forfeit_exit",
+      "first_player": 1,
+      "turns": 22,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 120.471,
+      "decisions": {
+        "1": 39,
+        "2": 43
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "greedy",
+          "kind": "greedy"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "2": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "steady-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/steady-paladin__haiku-paladin__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 2,
+      "reason": "forfeit_exit",
+      "first_player": 1,
+      "turns": 5,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 35.158,
+      "decisions": {
+        "1": 5,
+        "2": 8
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "steady-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "1": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "steady-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/steady-paladin__haiku-paladin__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 2,
+      "reason": "forfeit_exit",
+      "first_player": null,
+      "turns": 0,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 3.828,
+      "decisions": {
+        "1": 0,
+        "2": 0
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "steady-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "1": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "counter-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/counter-paladin__greedy-mage__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 2,
+      "reason": "forfeit_exit",
+      "first_player": 1,
+      "turns": 1,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 9.099,
+      "decisions": {
+        "1": 2,
+        "2": 1
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "counter-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "greedy",
+          "kind": "greedy"
+        }
+      ],
+      "notes": {
+        "1": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "counter-paladin",
+    "opponent": "greedy-mage",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/counter-paladin__greedy-mage__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "forfeit_exit",
+      "first_player": null,
+      "turns": 0,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 2.341,
+      "decisions": {
+        "1": 0,
+        "2": 0
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "greedy",
+          "kind": "greedy"
+        },
+        {
+          "index": 2,
+          "name": "counter-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "2": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "counter-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 1,
+    "path": "games/haiku-deck-research-authenticated/counter-paladin__haiku-paladin__seat1/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 1,
+      "reason": "forfeit_exit",
+      "first_player": null,
+      "turns": 0,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 3.844,
+      "decisions": {
+        "1": 0,
+        "2": 0
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "counter-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "2": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  },
+  {
+    "candidate": "counter-paladin",
+    "opponent": "haiku-paladin",
+    "candidate_seat": 2,
+    "path": "games/haiku-deck-research-authenticated/counter-paladin__haiku-paladin__seat2/g_20261027_000001/result.json",
+    "result": {
+      "game_id": "g_20261027_000001",
+      "seed": 172711,
+      "winner": 2,
+      "reason": "forfeit_exit",
+      "first_player": null,
+      "turns": 0,
+      "illegal_counts": {
+        "1": 0,
+        "2": 0
+      },
+      "restarts": {
+        "1": 0,
+        "2": 0
+      },
+      "timeouts": {
+        "1": 0,
+        "2": 0
+      },
+      "duration_s": 6.832,
+      "decisions": {
+        "1": 0,
+        "2": 1
+      },
+      "players": [
+        {
+          "index": 1,
+          "name": "baseline-paladin",
+          "kind": "skill"
+        },
+        {
+          "index": 2,
+          "name": "counter-paladin",
+          "kind": "skill"
+        }
+      ],
+      "notes": {
+        "1": [
+          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+        ]
+      }
+    }
+  }
+]

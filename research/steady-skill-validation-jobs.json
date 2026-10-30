@@ -1,0 +1,14 @@
+[
+  {
+    "job": "smoke",
+    "exit_code": 0
+  },
+  {
+    "job": "paladin-seat1",
+    "exit_code": 0
+  },
+  {
+    "job": "paladin-seat2",
+    "exit_code": 0
+  }
+]

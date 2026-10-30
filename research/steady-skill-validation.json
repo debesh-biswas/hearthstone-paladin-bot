@@ -1,0 +1,143 @@
+{
+  "games": [
+    {
+      "test": "paladin-seat1",
+      "skill_seat": 1,
+      "win": false,
+      "result": {
+        "game_id": "g_20261027_000001",
+        "seed": 271027,
+        "winner": 2,
+        "reason": "hero_death",
+        "first_player": 1,
+        "turns": 24,
+        "illegal_counts": {
+          "1": 1,
+          "2": 0
+        },
+        "restarts": {
+          "1": 0,
+          "2": 0
+        },
+        "timeouts": {
+          "1": 0,
+          "2": 0
+        },
+        "duration_s": 124.083,
+        "decisions": {
+          "1": 50,
+          "2": 54
+        },
+        "players": [
+          {
+            "index": 1,
+            "name": "steady-paladin",
+            "kind": "skill"
+          },
+          {
+            "index": 2,
+            "name": "greedy",
+            "kind": "greedy"
+          }
+        ]
+      },
+      "path": "games/steady-skill-upgrade/paladin-seat1/g_20261027_000001/result.json"
+    },
+    {
+      "test": "paladin-seat2",
+      "skill_seat": 2,
+      "win": true,
+      "result": {
+        "game_id": "g_20261027_000001",
+        "seed": 271027,
+        "winner": 2,
+        "reason": "hero_death",
+        "first_player": 1,
+        "turns": 22,
+        "illegal_counts": {
+          "1": 0,
+          "2": 1
+        },
+        "restarts": {
+          "1": 0,
+          "2": 0
+        },
+        "timeouts": {
+          "1": 0,
+          "2": 0
+        },
+        "duration_s": 365.387,
+        "decisions": {
+          "1": 44,
+          "2": 47
+        },
+        "players": [
+          {
+            "index": 1,
+            "name": "greedy",
+            "kind": "greedy"
+          },
+          {
+            "index": 2,
+            "name": "steady-paladin",
+            "kind": "skill"
+          }
+        ]
+      },
+      "path": "games/steady-skill-upgrade/paladin-seat2/g_20261027_000001/result.json"
+    },
+    {
+      "test": "random-smoke",
+      "skill_seat": 1,
+      "win": true,
+      "result": {
+        "game_id": "g_20261027_000001",
+        "seed": 1,
+        "winner": 1,
+        "reason": "hero_death",
+        "first_player": 1,
+        "turns": 17,
+        "illegal_counts": {
+          "1": 0,
+          "2": 0
+        },
+        "restarts": {
+          "1": 0,
+          "2": 0
+        },
+        "timeouts": {
+          "1": 0,
+          "2": 0
+        },
+        "duration_s": 115.61,
+        "decisions": {
+          "1": 37,
+          "2": 21
+        },
+        "players": [
+          {
+            "index": 1,
+            "name": "steady-paladin",
+            "kind": "skill"
+          },
+          {
+            "index": 2,
+            "name": "random",
+            "kind": "random"
+          }
+        ]
+      },
+      "path": "games/steady-skill-upgrade/random-smoke/g_20261027_000001/result.json"
+    }
+  ],
+  "wins": 2,
+  "illegal": 2,
+  "timeouts": 0,
+  "forfeits": 0,
+  "estimated_max_decision_latency_s": 35.17263078689575,
+  "file_hashes": {
+    "decks/steady-paladin/deck.json": "10ed15152dd8f7eb29d0e0e5de0aaf27a4906104b80465c44b8c864fecf3c245",
+    "decks/steady-paladin/SKILL.md": "780176efcf3bbfd53458d02fa1d9d63bda12b8c9892dd8f02c7ec906b5aca54e",
+    "decks/steady-paladin/references/guide.md": "a8de1c1d156027721783c215494e60aa51efaf7557b62c506d1a162a2a3efc68"
+  }
+}

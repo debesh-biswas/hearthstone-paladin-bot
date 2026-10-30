@@ -1,0 +1,17 @@
+{
+  "method": "Static official deck validator only; no games or simulations",
+  "decks": {
+    "burst-shaman": {
+      "cards": 30,
+      "errors": []
+    },
+    "infernal-warlock": {
+      "cards": 30,
+      "errors": []
+    },
+    "pressure-hunter": {
+      "cards": 30,
+      "errors": []
+    }
+  }
+}

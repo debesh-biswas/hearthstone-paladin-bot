@@ -1,0 +1,8 @@
+{
+  "research/decks/counter-paladin.json": "6b91fb2faa9aee6bfb96fbf7cb77d5deae9e002530ed9d3eaf08428c5f29e0fb",
+  "research/decks/steady-paladin.json": "10ed15152dd8f7eb29d0e0e5de0aaf27a4906104b80465c44b8c864fecf3c245",
+  "decks/aggro-paladin/deck.json": "8f6b0e92a700d9337a49b4693ebf5967f7984d4fb070e8721298b0da3418163e",
+  "pkg/hs-arena-0.2.2/decks/greedy_mage.json": "1e02dc64d9a7585580609857a4a95f36ef61d34a0266d863e00413cde8674e90",
+  "decks/control-paladin/deck.json": "912140f2d8b28b1c2e6818ebf248d5e3fa06ba8b94ba889ae4a1590f7dfaabb6",
+  "decks/zoo-warlock/deck.json": "b16ae806b1e0a4035917bad8ca77e4892c180865ec1ffdcb6669d4e1cd158415"
+}

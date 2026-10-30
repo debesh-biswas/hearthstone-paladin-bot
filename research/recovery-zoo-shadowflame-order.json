@@ -1,0 +1,10 @@
+{
+  "source": "games/alternatives-haiku-20261028/recovery-zoo__control-paladin__seat1/g_20261028_000001",
+  "turn": 19,
+  "seq": 28,
+  "verified_extra_face_damage_before_same_shadowflame": 8,
+  "enemy_health_before": 26,
+  "enemy_health_after": 18,
+  "enemy_board_after": [],
+  "claim": "Attack-ready Giant could hit face before being sacrificed; not a claim of a won game."
+}
