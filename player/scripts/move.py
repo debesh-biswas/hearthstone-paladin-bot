@@ -52,6 +52,10 @@ MULLIGAN = {
     "control-paladin": {"always": {"NEW1_020", "EX1_066", "EX1_096", "EX1_382", "EX1_556", "CS2_117"},
                         "with_early": set(), "second": set(),
                         "one_four": ["CS2_097", "CS2_093", "CS2_179"]},
+    # Astra's Zoo list, rebuilt from course results: local opponent only.
+    "astra-zoo-warlock": {"always": {"EX1_319", "CS2_065", "EX1_008", "EX1_029", "CS2_188", "NEW1_019", "EX1_162",
+                                     "EX1_096", "EX1_393"},
+                          "with_early": {"EX1_556", "EX1_019", "EX1_046"}, "second": set()},
     # The next three follow the KEEP lists of their own pilots (decks/<name>/scripts/move.py).
     "burst-shaman": {"always": {"EX1_008", "EX1_010", "EX1_096", "EX1_238"},
                      "with_early": {"EX1_556", "CS2_117", "EX1_258"}, "second": set()},
@@ -69,12 +73,13 @@ TARGETS = {
     "EX1_238": "enemy_or_face", "EX1_241": "enemy_or_face", "DS1_185": "enemy_or_face", "EX1_539": "enemy_or_face",
     "CS2_042": "enemy_or_face", "EX1_245": "enemy", "EX1_246": "enemy", "EX1_302": "enemy", "CS2_203": "enemy",
     "EX1_309": "enemy", "CS2_045": "own_or_me", "EX1_303": "own", "DS1_070": "own_beast",
+    "CS2_188": "own", "EX1_046": "own", "EX1_308": "enemy_or_face",
 }
 SPELLS_UNTARGETED = {"CS2_093", "EX1_384", "EX1_619", "GAME_005", "EX1_248", "EX1_259", "EX1_317", "CS2_062",
                      "EX1_312", "DS1_184", "EX1_611", "EX1_610", "NEW1_031", "EX1_538"}
 SECRETS = {"EX1_611", "EX1_610"}
 OVERLOAD = {"EX1_238": 1, "EX1_241": 2, "EX1_259": 2, "EX1_248": 2, "EX1_567": 2}
-DAMAGE_SPELLS = {"CS2_094": 3, "EX1_238": 3, "EX1_241": 5, "DS1_185": 2, "EX1_539": 3, "EX1_302": 1}
+DAMAGE_SPELLS = {"CS2_094": 3, "EX1_238": 3, "EX1_241": 5, "DS1_185": 2, "EX1_539": 3, "EX1_302": 1, "EX1_308": 4}
 # Card data has no minion race; these are the Beasts our lists can put on the board.
 BEASTS = {"CS2_120", "EX1_531", "CS2_203", "EX1_028", "EX1_534", "EX1_534t", "EX1_538t", "NEW1_032", "NEW1_033",
           "NEW1_034", "DS1_175", "CS2_171", "CS2_172", "CS2_237", "DS1_178", "EX1_543"}
@@ -372,6 +377,11 @@ def _battlecry(s, rng, cid, t, target, kw, c):
             n["atk"] += 1
             n["hp"] += 1
             n["max"] += 1
+    elif cid in ("CS2_188", "EX1_046") and t:  # Abusive Sergeant, Dark Iron Dwarf: +2 attack this turn
+        t["atk"] += 2
+        t["tmp"] = t.get("tmp", 0) + 2
+    elif cid == "EX1_319":  # Flame Imp
+        s["hp"] -= 3
     elif cid == "EX1_043":
         kw["hp"] = c["hp"] + len(s["hand"])
     elif cid == "EX1_012":
@@ -389,6 +399,8 @@ def _spell(s, rng, cid, t, target):
         _damage(s, target, t, dmg)
         if cid == "CS2_094":
             s["draws"] += 1
+        if cid == "EX1_308" and s["hand"]:  # Soulfire discards a random card
+            s["hand"].remove(rng.choice(s["hand"]))
     elif cid == "CS2_087" and t:
         t["atk"] += 3
     elif cid == "CS2_092" and t:
@@ -593,8 +605,11 @@ def evaluate(s):
         return -1e6
     v = W["face"] * (30 - s["opp_hp"]) + W["our_hp"] * math.sqrt(max(s["hp"], 0))
     doom = any(m["cid"] == "NEW1_021" and not m["silenced"] for m in s["own"])
+    edoom = any(m["cid"] == "NEW1_021" and not m["silenced"] for m in s["enemy"])
     if doom:  # Doomsayer clears both boards at the start of our next turn (unless they kill it first)
         v -= 0.3 * sum(mval(m) for m in s["enemy"])
+    elif edoom:  # theirs clears both boards at the start of their turn: our minions die, theirs never attack
+        v += 0.3 * sum(mval(m) for m in s["own"])
     else:
         v += sum(mval(m) for m in s["own"]) - W["enemy_minion"] * sum(mval(m) for m in s["enemy"])
     v += sum(W["hand_base"] + W["hand_per_cost"] * c["cost"] for c in s["hand"]) + W["draw"] * s["draws"]
@@ -603,7 +618,7 @@ def evaluate(s):
     if s["weapon"]:
         v += W["weapon"] * s["weapon"]["atk"] * s["weapon"]["dur"]
     # their next turn: every enemy minion attacks; our taunts soak some of it
-    their = sum(m["atk"] * (2 if m["wf"] else 1) for m in s["enemy"]) + s["opp_weapon"]
+    their = (0 if edoom else sum(m["atk"] * (2 if m["wf"] else 1) for m in s["enemy"])) + s["opp_weapon"]
     their += FACE_DAMAGE_PER_TURN.get(s["opp_class"], 0)
     their -= sum(m["hp"] + (m["atk"] if m["ds"] else 0) for m in s["own"] if m["taunt"])
     reach = W["reach"] if s["opp_hand"] else 0
@@ -630,8 +645,11 @@ def _key(s):
 
 def plan(state):
     """Beam search over our turn. Returns [(score, first_action)] best first, end_turn included."""
-    rng = random.Random(state["seq"])
-    root = load(state)
+    return search(load(state), random.Random(state["seq"]))
+
+
+def search(root, rng):
+    """plan() on a model state."""
     best = {("end",): evaluate(root)}
     frontier = [(root, None)]
     for _ in range(MAX_STEPS):

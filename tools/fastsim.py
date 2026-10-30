@@ -64,6 +64,8 @@ def _opponent(spec, seat, seed, opp_w):
         return ScriptPlayer("opp", ROOT / spec[7:], opp_w)
     if spec.startswith("pilot:"):
         return PilotPlayer("opp", ROOT / spec[6:])
+    if spec.endswith(".json"):  # any deck file, greedy-piloted
+        return make_player(f"greedy:{ROOT / spec}", seat, seed)
     deck = "greedy" if spec == "greedy-mage" else f"greedy:{ROOT / 'decks' / spec / 'deck.json'}"
     return make_player(deck, seat, seed)
 
@@ -77,19 +79,22 @@ def _game(job):
         r = play_game(players, game_dir=tmp / "g", game_id=f"g{seed}", seed=seed, config=Config(keep_decisions=False))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
-    return opp, seat, r["winner"], r["reason"]
+    return opp, seat, r["winner"], r["reason"], r.get("first_player") == seat
 
 
-def run(games, w=None, deck=None, field=FIELD, seed=1000, workers=14, opp_w=None, opp_ws=None):
-    """opp_ws: {opponent spec: weights} for script: opponents that each need their own weights (default opp_w)."""
+def run(games, w=None, deck=None, field=FIELD, seed=1000, workers=14, opp_w=None, opp_ws=None, split=False):
+    """opp_ws: {opponent spec: weights} for script: opponents that each need their own weights (default opp_w).
+    split: key results by "<opponent>|first" / "<opponent>|second" (whether we went first)."""
     deck_path = str(deck or ROOT / "player" / "deck.json")
     jobs = [(o, seed + k, s, deck_path, w or {}, (opp_ws or {}).get(o, opp_w or {}))
             for o in field for s in (1, 2) for k in range(1, games // 2 + 1)]
     with Pool(workers) as pool:
         rows = pool.map(_game, jobs, chunksize=4)
-    out = {o: [0, 0] for o in field}
+    out = {f"{o}|{f}": [0, 0] for o in field for f in ("first", "second")} if split else {o: [0, 0] for o in field}
     bad = 0
-    for opp, seat, winner, reason in rows:
+    for opp, seat, winner, reason, first in rows:
+        if split:
+            opp = f"{opp}|{'first' if first else 'second'}"
         out[opp][0] += winner == seat
         out[opp][1] += 1
         bad += reason.startswith("forfeit") or reason.startswith("void")

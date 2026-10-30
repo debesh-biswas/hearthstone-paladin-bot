@@ -93,3 +93,18 @@ assert s["hp"] == 15 and s["weapon"]["dur"] == 8 and s["hp_kind"] == "infernal" 
 m = minion(1, "x", 2, 2)
 s = move.apply(state(own=[m], hand=[card(9, "CS2_045", "SPELL", 2)]), ("play", 9, 1), RNG)
 assert s["own"][0]["atk"] == 5 and move.mval(s["own"][0]) == move.mval(m)
+
+# Zoo: Abusive Sergeant's +2 is temporary; Flame Imp costs 3 health; Soulfire hits for 4 and discards a card
+m = minion(1, "x", 2, 2)
+s = move.apply(state(own=[m], hand=[card(8, "CS2_188", "MINION", 1, 1, 1), card(9, "EX1_319", "MINION", 1, 3, 2),
+                                    card(7, "EX1_308", "SPELL", 1), card(6, "y", "MINION", 1, 1, 1)], hp=20), ("play", 8, 1), RNG)
+assert s["own"][0]["atk"] == 4 and move.mval(s["own"][0]) == move.mval(m)
+s = move.apply(s, ("play", 9, None), RNG)
+assert s["hp"] == 17
+s = move.apply(s, ("play", 7, "hero"), RNG)
+assert s["opp_hp"] == 26 and len(s["hand"]) == 0
+
+# An enemy Doomsayer wipes both boards at the start of their turn: adding a minion into it gains little
+s = state(enemy=[minion(2, "NEW1_021", 0, 7)])
+big = state(own=[minion(1, "x", 5, 5)], enemy=[minion(2, "NEW1_021", 0, 7)])
+assert move.evaluate(big) - move.evaluate(s) < 0.5 * move.mval(minion(1, "x", 5, 5))

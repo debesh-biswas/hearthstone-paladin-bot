@@ -27,12 +27,19 @@ def log(*a):
 
 
 def tune_deck(name, st, frozen, seed):
-    deck, w = st["decks"][name], dict(st["weights"][name])
     field = [f"script:{d}" for d in st["decks"].values()]
     opp_ws = {f"script:{st['decks'][n]}": frozen[n] for n in frozen}
+    return tune(name, st["decks"][name], st["weights"][name], field, opp_ws, seed)
+
+
+def tune(name, deck, w, field, opp_ws, seed, games=TUNE_GAMES, only=None):
+    """One coordinate-descent pass of every weight (x0.67, x1.5) against field; returns the new weights.
+    only="first"/"second": score only the games where we went first/second."""
+    w = dict(w)
 
     def score(trial):
-        out, bad = fastsim.run(TUNE_GAMES, trial, deck, field=field, seed=seed, opp_ws=opp_ws)
+        out, bad = fastsim.run(games, trial, deck, field=field, seed=seed, opp_ws=opp_ws, split=bool(only))
+        out = {k: v for k, v in out.items() if not only or k.endswith(only)}
         return sum(v[0] for v in out.values()) / sum(v[1] for v in out.values()), bad
 
     best, _ = score(w)

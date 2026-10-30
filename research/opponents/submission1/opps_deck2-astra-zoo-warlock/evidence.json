@@ -1,0 +1,917 @@
+{
+  "hero_class": "WARLOCK",
+  "title": "Astra \u2014 Zoo Warlock",
+  "folder": "opps_deck2-astra-zoo-warlock",
+  "observed_slots": 29,
+  "inferred_slots": 1,
+  "exact_deck_known": false,
+  "constant_deck_assumption": "All four games are compatible with this reconstruction; identical hidden lists cannot be proven.",
+  "cards": [
+    {
+      "card_id": "CS2_188",
+      "name": "Abusive Sergeant",
+      "cost": 1,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_008",
+      "name": "Argent Squire",
+      "cost": 1,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        2,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_319",
+      "name": "Flame Imp",
+      "cost": 1,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "card_id": "EX1_029",
+      "name": "Leper Gnome",
+      "cost": 1,
+      "observed_minimum": 1,
+      "reconstructed_copies": 2,
+      "inferred_copies": 1,
+      "per_game_counts": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_302",
+      "name": "Mortal Coil",
+      "cost": 1,
+      "observed_minimum": 1,
+      "reconstructed_copies": 1,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_308",
+      "name": "Soulfire",
+      "cost": 1,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "card_id": "CS2_065",
+      "name": "Voidwalker",
+      "cost": 1,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_393",
+      "name": "Amani Berserker",
+      "cost": 2,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_162",
+      "name": "Dire Wolf Alpha",
+      "cost": 2,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "card_id": "NEW1_019",
+      "name": "Knife Juggler",
+      "cost": 2,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_096",
+      "name": "Loot Hoarder",
+      "cost": 2,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_556",
+      "name": "Harvest Golem",
+      "cost": 3,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_597",
+      "name": "Imp Master",
+      "cost": 3,
+      "observed_minimum": 1,
+      "reconstructed_copies": 1,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_019",
+      "name": "Shattered Sun Cleric",
+      "cost": 3,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "card_id": "EX1_046",
+      "name": "Dark Iron Dwarf",
+      "cost": 4,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "card_id": "EX1_093",
+      "name": "Defender of Argus",
+      "cost": 4,
+      "observed_minimum": 2,
+      "reconstructed_copies": 2,
+      "inferred_copies": 0,
+      "per_game_counts": [
+        2,
+        1,
+        2,
+        0
+      ]
+    }
+  ],
+  "games": [
+    {
+      "game": "astra_01",
+      "game_id": "hw2_87dd38ac01aa4888b321388769cc0691_astra_01",
+      "student_outcome": "win",
+      "final_turn": 29,
+      "revealed_starting_cards": 28,
+      "opponent_deck_remaining": 2,
+      "opponent_hand_remaining": 0,
+      "counts": {
+        "EX1_008": 2,
+        "EX1_019": 2,
+        "NEW1_019": 2,
+        "EX1_046": 2,
+        "CS2_188": 2,
+        "EX1_393": 2,
+        "EX1_302": 1,
+        "EX1_162": 2,
+        "EX1_319": 2,
+        "EX1_597": 1,
+        "EX1_556": 2,
+        "EX1_096": 1,
+        "EX1_029": 1,
+        "CS2_065": 2,
+        "EX1_308": 2,
+        "EX1_093": 2
+      },
+      "evidence": {
+        "EX1_008": [
+          {
+            "seq": 4,
+            "turn_at_observation": 3,
+            "event": "play_card",
+            "entity_id": 46
+          },
+          {
+            "seq": 8,
+            "turn_at_observation": 7,
+            "event": "play_card",
+            "entity_id": 45
+          }
+        ],
+        "EX1_019": [
+          {
+            "seq": 6,
+            "turn_at_observation": 5,
+            "event": "play_card",
+            "entity_id": 60
+          },
+          {
+            "seq": 27,
+            "turn_at_observation": 21,
+            "event": "play_card",
+            "entity_id": 61
+          }
+        ],
+        "NEW1_019": [
+          {
+            "seq": 8,
+            "turn_at_observation": 7,
+            "event": "play_card",
+            "entity_id": 49
+          },
+          {
+            "seq": 30,
+            "turn_at_observation": 23,
+            "event": "play_card",
+            "entity_id": 48
+          }
+        ],
+        "EX1_046": [
+          {
+            "seq": 10,
+            "turn_at_observation": 9,
+            "event": "play_card",
+            "entity_id": 63
+          },
+          {
+            "seq": 30,
+            "turn_at_observation": 23,
+            "event": "play_card",
+            "entity_id": 62
+          }
+        ],
+        "CS2_188": [
+          {
+            "seq": 13,
+            "turn_at_observation": 11,
+            "event": "play_card",
+            "entity_id": 43
+          },
+          {
+            "seq": 18,
+            "turn_at_observation": 15,
+            "event": "play_card",
+            "entity_id": 44
+          }
+        ],
+        "EX1_393": [
+          {
+            "seq": 13,
+            "turn_at_observation": 11,
+            "event": "play_card",
+            "entity_id": 52
+          },
+          {
+            "seq": 34,
+            "turn_at_observation": 25,
+            "event": "play_card",
+            "entity_id": 53
+          }
+        ],
+        "EX1_302": [
+          {
+            "seq": 15,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 55
+          }
+        ],
+        "EX1_162": [
+          {
+            "seq": 15,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 51
+          },
+          {
+            "seq": 34,
+            "turn_at_observation": 25,
+            "event": "play_card",
+            "entity_id": 50
+          }
+        ],
+        "EX1_319": [
+          {
+            "seq": 15,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 40
+          },
+          {
+            "seq": 18,
+            "turn_at_observation": 15,
+            "event": "play_card",
+            "entity_id": 39
+          }
+        ],
+        "EX1_597": [
+          {
+            "seq": 18,
+            "turn_at_observation": 15,
+            "event": "play_card",
+            "entity_id": 66
+          }
+        ],
+        "EX1_556": [
+          {
+            "seq": 20,
+            "turn_at_observation": 17,
+            "event": "play_card",
+            "entity_id": 59
+          },
+          {
+            "seq": 20,
+            "turn_at_observation": 17,
+            "event": "play_card",
+            "entity_id": 58
+          }
+        ],
+        "EX1_096": [
+          {
+            "seq": 23,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 68
+          }
+        ],
+        "EX1_029": [
+          {
+            "seq": 23,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 47
+          }
+        ],
+        "CS2_065": [
+          {
+            "seq": 23,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 41
+          },
+          {
+            "seq": 38,
+            "turn_at_observation": 27,
+            "event": "play_card",
+            "entity_id": 42
+          }
+        ],
+        "EX1_308": [
+          {
+            "seq": 23,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 56
+          },
+          {
+            "seq": 38,
+            "turn_at_observation": 27,
+            "event": "play_card",
+            "entity_id": 57
+          }
+        ],
+        "EX1_093": [
+          {
+            "seq": 27,
+            "turn_at_observation": 21,
+            "event": "play_card",
+            "entity_id": 65
+          },
+          {
+            "seq": 44,
+            "turn_at_observation": 29,
+            "event": "play_card",
+            "entity_id": 64
+          }
+        ]
+      },
+      "student_illegal_actions": 0,
+      "student_timeouts": 0,
+      "student_forfeit": false,
+      "finish_reason": "hero_death"
+    },
+    {
+      "game": "astra_02",
+      "game_id": "hw2_87dd38ac01aa4888b321388769cc0691_astra_02",
+      "student_outcome": "loss",
+      "final_turn": 21,
+      "revealed_starting_cards": 20,
+      "opponent_deck_remaining": 8,
+      "opponent_hand_remaining": 1,
+      "counts": {
+        "EX1_319": 1,
+        "CS2_065": 2,
+        "CS2_188": 2,
+        "EX1_096": 2,
+        "EX1_393": 1,
+        "EX1_019": 2,
+        "EX1_046": 2,
+        "EX1_302": 1,
+        "EX1_008": 1,
+        "EX1_093": 1,
+        "EX1_556": 2,
+        "EX1_308": 1,
+        "NEW1_019": 1,
+        "EX1_162": 1
+      },
+      "evidence": {
+        "EX1_319": [
+          {
+            "seq": 3,
+            "turn_at_observation": 2,
+            "event": "play_card",
+            "entity_id": 7
+          }
+        ],
+        "CS2_065": [
+          {
+            "seq": 4,
+            "turn_at_observation": 4,
+            "event": "play_card",
+            "entity_id": 8
+          },
+          {
+            "seq": 4,
+            "turn_at_observation": 4,
+            "event": "play_card",
+            "entity_id": 9
+          }
+        ],
+        "CS2_188": [
+          {
+            "seq": 7,
+            "turn_at_observation": 6,
+            "event": "play_card",
+            "entity_id": 10
+          },
+          {
+            "seq": 23,
+            "turn_at_observation": 18,
+            "event": "play_card",
+            "entity_id": 11
+          }
+        ],
+        "EX1_096": [
+          {
+            "seq": 7,
+            "turn_at_observation": 6,
+            "event": "play_card",
+            "entity_id": 35
+          },
+          {
+            "seq": 13,
+            "turn_at_observation": 12,
+            "event": "play_card",
+            "entity_id": 34
+          }
+        ],
+        "EX1_393": [
+          {
+            "seq": 9,
+            "turn_at_observation": 8,
+            "event": "play_card",
+            "entity_id": 20
+          }
+        ],
+        "EX1_019": [
+          {
+            "seq": 11,
+            "turn_at_observation": 10,
+            "event": "play_card",
+            "entity_id": 28
+          },
+          {
+            "seq": 26,
+            "turn_at_observation": 20,
+            "event": "play_card",
+            "entity_id": 27
+          }
+        ],
+        "EX1_046": [
+          {
+            "seq": 13,
+            "turn_at_observation": 12,
+            "event": "play_card",
+            "entity_id": 29
+          },
+          {
+            "seq": 15,
+            "turn_at_observation": 14,
+            "event": "play_card",
+            "entity_id": 30
+          }
+        ],
+        "EX1_302": [
+          {
+            "seq": 15,
+            "turn_at_observation": 14,
+            "event": "play_card",
+            "entity_id": 21
+          }
+        ],
+        "EX1_008": [
+          {
+            "seq": 15,
+            "turn_at_observation": 14,
+            "event": "play_card",
+            "entity_id": 12
+          }
+        ],
+        "EX1_093": [
+          {
+            "seq": 19,
+            "turn_at_observation": 16,
+            "event": "play_card",
+            "entity_id": 32
+          }
+        ],
+        "EX1_556": [
+          {
+            "seq": 19,
+            "turn_at_observation": 16,
+            "event": "play_card",
+            "entity_id": 26
+          },
+          {
+            "seq": 26,
+            "turn_at_observation": 20,
+            "event": "play_card",
+            "entity_id": 25
+          }
+        ],
+        "EX1_308": [
+          {
+            "seq": 19,
+            "turn_at_observation": 16,
+            "event": "play_card",
+            "entity_id": 24
+          }
+        ],
+        "NEW1_019": [
+          {
+            "seq": 23,
+            "turn_at_observation": 18,
+            "event": "play_card",
+            "entity_id": 16
+          }
+        ],
+        "EX1_162": [
+          {
+            "seq": 30,
+            "turn_at_observation": 21,
+            "event": "play_card",
+            "entity_id": 17
+          }
+        ]
+      },
+      "student_illegal_actions": 0,
+      "student_timeouts": 0,
+      "student_forfeit": false,
+      "finish_reason": "hero_death"
+    },
+    {
+      "game": "astra_03",
+      "game_id": "hw2_87dd38ac01aa4888b321388769cc0691_astra_03",
+      "student_outcome": "win",
+      "final_turn": 21,
+      "revealed_starting_cards": 18,
+      "opponent_deck_remaining": 11,
+      "opponent_hand_remaining": 0,
+      "counts": {
+        "EX1_029": 1,
+        "EX1_556": 2,
+        "NEW1_019": 1,
+        "EX1_319": 1,
+        "EX1_597": 1,
+        "EX1_008": 2,
+        "EX1_093": 2,
+        "EX1_308": 1,
+        "EX1_393": 2,
+        "EX1_096": 1,
+        "CS2_065": 1,
+        "EX1_019": 1,
+        "CS2_188": 2
+      },
+      "evidence": {
+        "EX1_029": [
+          {
+            "seq": 4,
+            "turn_at_observation": 3,
+            "event": "play_card",
+            "entity_id": 14
+          }
+        ],
+        "EX1_556": [
+          {
+            "seq": 6,
+            "turn_at_observation": 5,
+            "event": "play_card",
+            "entity_id": 26
+          },
+          {
+            "seq": 13,
+            "turn_at_observation": 9,
+            "event": "play_card",
+            "entity_id": 25
+          }
+        ],
+        "NEW1_019": [
+          {
+            "seq": 9,
+            "turn_at_observation": 7,
+            "event": "play_card",
+            "entity_id": 16
+          }
+        ],
+        "EX1_319": [
+          {
+            "seq": 9,
+            "turn_at_observation": 7,
+            "event": "play_card",
+            "entity_id": 6
+          }
+        ],
+        "EX1_597": [
+          {
+            "seq": 17,
+            "turn_at_observation": 11,
+            "event": "play_card",
+            "entity_id": 33
+          }
+        ],
+        "EX1_008": [
+          {
+            "seq": 22,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 12
+          },
+          {
+            "seq": 34,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 13
+          }
+        ],
+        "EX1_093": [
+          {
+            "seq": 22,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 31
+          },
+          {
+            "seq": 26,
+            "turn_at_observation": 15,
+            "event": "play_card",
+            "entity_id": 32
+          }
+        ],
+        "EX1_308": [
+          {
+            "seq": 22,
+            "turn_at_observation": 13,
+            "event": "play_card",
+            "entity_id": 24
+          }
+        ],
+        "EX1_393": [
+          {
+            "seq": 26,
+            "turn_at_observation": 15,
+            "event": "play_card",
+            "entity_id": 19
+          },
+          {
+            "seq": 41,
+            "turn_at_observation": 21,
+            "event": "play_card",
+            "entity_id": 20
+          }
+        ],
+        "EX1_096": [
+          {
+            "seq": 29,
+            "turn_at_observation": 17,
+            "event": "play_card",
+            "entity_id": 35
+          }
+        ],
+        "CS2_065": [
+          {
+            "seq": 29,
+            "turn_at_observation": 17,
+            "event": "play_card",
+            "entity_id": 8
+          }
+        ],
+        "EX1_019": [
+          {
+            "seq": 34,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 27
+          }
+        ],
+        "CS2_188": [
+          {
+            "seq": 34,
+            "turn_at_observation": 19,
+            "event": "play_card",
+            "entity_id": 11
+          },
+          {
+            "seq": 41,
+            "turn_at_observation": 21,
+            "event": "play_card",
+            "entity_id": 10
+          }
+        ]
+      },
+      "student_illegal_actions": 0,
+      "student_timeouts": 0,
+      "student_forfeit": false,
+      "finish_reason": "hero_death"
+    },
+    {
+      "game": "astra_04",
+      "game_id": "hw2_87dd38ac01aa4888b321388769cc0691_astra_04",
+      "student_outcome": "loss",
+      "final_turn": 11,
+      "revealed_starting_cards": 10,
+      "opponent_deck_remaining": 18,
+      "opponent_hand_remaining": 1,
+      "counts": {
+        "EX1_319": 2,
+        "NEW1_019": 1,
+        "EX1_162": 1,
+        "EX1_096": 1,
+        "EX1_008": 1,
+        "EX1_302": 1,
+        "CS2_188": 1,
+        "EX1_046": 1,
+        "EX1_308": 1
+      },
+      "evidence": {
+        "EX1_319": [
+          {
+            "seq": 3,
+            "turn_at_observation": 2,
+            "event": "play_card",
+            "entity_id": 39
+          },
+          {
+            "seq": 7,
+            "turn_at_observation": 6,
+            "event": "play_card",
+            "entity_id": 40
+          }
+        ],
+        "NEW1_019": [
+          {
+            "seq": 4,
+            "turn_at_observation": 4,
+            "event": "play_card",
+            "entity_id": 48
+          }
+        ],
+        "EX1_162": [
+          {
+            "seq": 7,
+            "turn_at_observation": 6,
+            "event": "play_card",
+            "entity_id": 50
+          }
+        ],
+        "EX1_096": [
+          {
+            "seq": 9,
+            "turn_at_observation": 8,
+            "event": "play_card",
+            "entity_id": 67
+          }
+        ],
+        "EX1_008": [
+          {
+            "seq": 9,
+            "turn_at_observation": 8,
+            "event": "play_card",
+            "entity_id": 45
+          }
+        ],
+        "EX1_302": [
+          {
+            "seq": 9,
+            "turn_at_observation": 8,
+            "event": "play_card",
+            "entity_id": 55
+          }
+        ],
+        "CS2_188": [
+          {
+            "seq": 11,
+            "turn_at_observation": 10,
+            "event": "play_card",
+            "entity_id": 43
+          }
+        ],
+        "EX1_046": [
+          {
+            "seq": 13,
+            "turn_at_observation": 11,
+            "event": "play_card",
+            "entity_id": 63
+          }
+        ],
+        "EX1_308": [
+          {
+            "seq": 13,
+            "turn_at_observation": 11,
+            "event": "play_card",
+            "entity_id": 56
+          }
+        ]
+      },
+      "student_illegal_actions": 0,
+      "student_timeouts": 0,
+      "student_forfeit": false,
+      "finish_reason": "hero_death"
+    }
+  ]
+}

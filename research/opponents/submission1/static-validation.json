@@ -1,0 +1,12 @@
+{
+  "opps_deck1-bot2-face-hunter": {
+    "deck_size": 30,
+    "validation_errors": [],
+    "evidence_consistency": "pass"
+  },
+  "opps_deck2-astra-zoo-warlock": {
+    "deck_size": 30,
+    "validation_errors": [],
+    "evidence_consistency": "pass"
+  }
+}
