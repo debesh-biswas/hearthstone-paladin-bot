@@ -49,7 +49,7 @@ MULLIGAN = {
     "counter-paladin": {"always": {"EX1_008", "EX1_010", "NEW1_019", "EX1_096", "EX1_066", "EX1_556"},
                         "with_early": {"EX1_362", "EX1_382", "EX1_590", "EX1_363"},
                         "second": {"CS2_097"}},
-    "control-paladin": {"always": {"NEW1_020", "EX1_066", "EX1_096", "EX1_382", "EX1_556", "CS2_117"},
+    "control-paladin": {"always": {"NEW1_020", "EX1_066", "EX1_096", "EX1_382", "EX1_556", "CS2_117", "NEW1_021"},
                         "with_early": set(), "second": set(),
                         "one_four": ["CS2_097", "CS2_093", "CS2_179"]},
     # Astra's Zoo list, rebuilt from course results: local opponent only.
