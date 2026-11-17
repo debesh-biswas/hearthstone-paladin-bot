@@ -1,4 +1,4 @@
-# course package: unpacked engine is tracked; its venv and original download are not
+# engine package: unpacked engine is tracked; its venv and original download are not
 pkg/*.zip
 pkg/**/.venv/
 # envs, caches, outputs

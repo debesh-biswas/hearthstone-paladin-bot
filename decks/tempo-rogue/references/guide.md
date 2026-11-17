@@ -1,6 +1,6 @@
 # Tempo Rogue — Deck Guide (pool `basic-classic-1`, hs-arena 0.2.2)
 
-All card text, costs and stats below are the **current** versions from `meta.md` §2 (modern Legacy Basic+Classic,
+All card text, costs and stats below are the **current** versions from the card data (`pkg/hs-arena-0.2.2/data/cards.json`) (modern Legacy Basic+Classic,
 nerfs applied, Hall of Fame removed). Online guides describe stronger 2014 versions; where they differ, this guide
 follows our pool.
 
@@ -24,7 +24,7 @@ lost almost every engine piece:
 | Blade Flurry | 2 mana, hit heroes too | **4 mana, minions only** | Lost its face damage. |
 
 What remains (6-mana Auctioneer, Sprint 7) is slow, card-sequencing-heavy and the hardest thing for a simple pilot
-to execute (meta.md §3.3 rates Miracle "Low" scriptability). Meanwhile the **tempo tools are all intact**:
+to execute (Miracle is hard to script). Meanwhile the **tempo tools are all intact**:
 Backstab 0, Eviscerate 2, SI:7 Agent 3, Sap 2, Defias Ringleader 2, Edwin VanCleef **3** (the 2021 cost-4 nerf was
 reverted), the dagger hero power and Assassin's Blade. Opponents in this arena are bots that play greedily without
 planning, which tempo punishes best. **So: Tempo Rogue.**
@@ -359,4 +359,4 @@ prefer several medium threats over one huge one.
   weapon + stealth aggro plan; Southsea Deckhand / Dread Corsair options.
 - HSReplay, "The Art of the Mulligan" — https://articles.hsreplay.net/2019/04/15/the-art-of-mulligan/ — keep cards that
   contest the board early; mulligan depends on Coin and opponent class; how opponents beat Tempo Rogue (stabilize, keep life high).
-- Project `meta.md` §2–3 — current card text, nerf list, Greedy Mage decklist and behaviour.
+- the card data (`pkg/hs-arena-0.2.2/data/cards.json`) — current card text, nerf list, Greedy Mage decklist and behaviour.

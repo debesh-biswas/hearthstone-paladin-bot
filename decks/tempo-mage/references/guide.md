@@ -1,7 +1,7 @@
 # Tempo Mage: Deck Guide (hs-arena, Basic + Classic "Legacy" pool)
 
 Pool: `basic-classic-1`, modern Legacy card versions (nerfs applied, Hall of Fame removed). Every cost, stat line and
-card text below was checked against `meta.md` §2. Where the online advice used older card versions, the change is noted.
+card text below was checked against the card data (`pkg/hs-arena-0.2.2/data/cards.json`) Where the online advice used older card versions, the change is noted.
 
 ---
 
@@ -447,5 +447,5 @@ Card ids: Missiles `EX1_277`, Wyrm `NEW1_012`, Apprentice `EX1_608`, Juggler `NE
 | https://www.gosugamers.net/hearthstone/news/42205-the-core-quick-guide-to-tempo-mage | Water Elemental as a hard-to-remove 3/6 good vs weapon classes; Flamestrike vs Zoo/Shaman boards; Arcane Explosion as an anti-token tech. |
 | https://www.hearthstonetopdecks.com/deck-guide/tempo-mage-deck-list-guide/ | General tempo plan ("get on the board, push damage, draw big spells, finish them"), Apprentice used deliberately, control role vs aggro / aggro role vs control, prioritise board early. |
 | https://www.vicioussyndicate.com/classic-vs-data-reaper-report-1/ | Classic-format data: Mage is weak in Classic (Burn Mage exploited by top decks), Miracle Rogue / Zoo / Midrange Shaman top tier, Priest worst. Used for matchup expectations. |
-| `meta.md` §2–3 (project) | Current card text/stats, nerf list, Hall of Fame removals, Greedy Mage decklist. |
+| the card data (`pkg/hs-arena-0.2.2/data/cards.json`) | Current card text/stats, nerf list, Hall of Fame removals, Greedy Mage decklist. |
 | `pkg/hs-arena-0.2.2/src/hs_arena/agents/greedy_bot.py` + `greedy_config.json` | Greedy Mage behaviour: removal targeting rules, Polymorph threshold (value ≥ 6), Fireblast rules, Flamestrike trigger, trade scoring. |

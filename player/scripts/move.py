@@ -3,7 +3,7 @@
 Reads game/state.json (or the path in argv[1]). In the main phase it plans our whole turn with a small model of
 the board (attacks, shields, taunts, our cards' effects), scores where each plan ends and returns the first step of
 the best one; the next decision plans again from the real state. Uses only what our seat can see.
-Anything the plan proposes that is not in legal_actions is never sent; on any error the course greedy bot decides.
+Anything the plan proposes that is not in legal_actions is never sent; on any error the built-in greedy bot decides.
 """
 
 import json
@@ -52,7 +52,7 @@ MULLIGAN = {
     "control-paladin": {"always": {"NEW1_020", "EX1_066", "EX1_096", "EX1_382", "EX1_556", "CS2_117", "NEW1_021"},
                         "with_early": set(), "second": set(),
                         "one_four": ["CS2_097", "CS2_093", "CS2_179"]},
-    # Astra's Zoo list, rebuilt from course results: local opponent only.
+    # Astra's Zoo list, rebuilt from observed games: local opponent only.
     "astra-zoo-warlock": {"always": {"EX1_319", "CS2_065", "EX1_008", "EX1_029", "CS2_188", "NEW1_019", "EX1_162",
                                      "EX1_096", "EX1_393"},
                           "with_early": {"EX1_556", "EX1_019", "EX1_046"}, "second": set()},

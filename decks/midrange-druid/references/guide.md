@@ -1,6 +1,6 @@
 # Midrange / Ramp Druid: full guide (hs-arena, Basic + Classic Legacy pool)
 
-All card text, costs and stats below are from `meta.md` §2 (the pool the engine actually uses), not from memory
+All card text, costs and stats below are from the card data (`pkg/hs-arena-0.2.2/data/cards.json`) (the pool the engine actually uses), not from memory
 of the 2014 game. Choose One option names and ids were read from the engine's card definitions.
 
 ---

@@ -1,7 +1,7 @@
 # Midrange Hunter ("Sunshine" / Beast Hunter): Deck Guide
 
 Pool: hs-arena 0.2.2, `basic-classic-1` (modern Legacy Basic + Classic, nerfs applied, Hall of Fame removed).
-Every card text below was checked against `meta.md` §2 / `data/cards.json`, not taken from memory or old guides.
+Every card text below was checked against the card data (`pkg/hs-arena-0.2.2/data/cards.json`) / `data/cards.json`, not taken from memory or old guides.
 
 ---
 

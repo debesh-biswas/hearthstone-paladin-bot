@@ -306,4 +306,4 @@ Divine Shield on an enemy Taunt absorbs one hit. If total ≥ enemy health + arm
   the middle, Doomhammer + Rockbiter 10 damage from empty board, keep Doomhammer vs slow classes only with early plays.
 - Hearthstone Wiki — Totemic Call: https://hearthstone.wiki.gg/wiki/Totemic_Call — 2 mana, random basic totem, placed
   right; behaviour in our engine verified in the vendored fireplace code (no duplicates, unusable with all 4 out).
-- `meta.md` §2 (project) — current text/cost/stats of every card listed above; §3.4 Greedy Mage list.
+- the card data (`pkg/hs-arena-0.2.2/data/cards.json`) — current text/cost/stats of every card listed above; §3.4 Greedy Mage list.

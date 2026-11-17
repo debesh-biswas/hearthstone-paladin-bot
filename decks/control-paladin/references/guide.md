@@ -345,4 +345,4 @@ play Sunwalker/Cairne first and pressure early. Mass Dispel silences everything.
 - Vicious Syndicate, Classic Data Reaper #1: https://www.vicioussyndicate.com/classic-vs-data-reaper-report-1/
   (Control Paladin rated weak on the human Classic ladder; plan = taunt up, heal with Guardian of Kings and Lay on
   Hands, swing turns with Equality and Stampeding Kodo; strongest decks in Classic were Rogue/Shaman/Zoo).
-- Project `meta.md` §2–3 (card text/costs for this pool, nerf list, archetype survival table, Greedy Mage list).
+- the card data (`pkg/hs-arena-0.2.2/data/cards.json`) (card text/costs for this pool, nerf list, archetype survival table, Greedy Mage list).

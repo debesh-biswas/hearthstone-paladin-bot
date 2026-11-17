@@ -1,7 +1,7 @@
 # Aggro Paladin ("Shockadin" adapted to Midrange-Aggro): Deck Guide
 
 Pool: hs-arena `basic-classic-1` (modern Legacy Basic + Classic, nerfs applied, Hall of Fame removed).
-Every card text below was checked against `meta.md` §2 / `hs_arena.cards`. Do not trust remembered 2014 text.
+Every card text below was checked against the card data (`pkg/hs-arena-0.2.2/data/cards.json`) / `hs_arena.cards`. Do not trust remembered 2014 text.
 
 ---
 
@@ -344,4 +344,4 @@ COMMANDER=`EX1_067` WRATH=`EX1_384` TIRION=`EX1_383`.
   as Charge minions + weapons + attack buffs with Divine Favor refill.
 - https://articles.hsreplay.net/2019/04/15/the-art-of-mulligan/: mulligan principles (keeps depend on Coin/turn order and opponent;
   keep early board contesters vs aggro).
-- `meta.md` §2–3 (project): current card text/costs, Hall of Fame list, Greedy Mage decklist and behaviour.
+- the card data (`pkg/hs-arena-0.2.2/data/cards.json`): current card text/costs, Hall of Fame list, Greedy Mage decklist and behaviour.

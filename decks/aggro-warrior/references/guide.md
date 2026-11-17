@@ -317,4 +317,4 @@ CMDR=`EX1_067`, GORE=`EX1_411`, GROM=`EX1_414`.
 - HearthPwn, "Arms Warrior (Aggro)": https://www.hearthpwn.com/decks/184232-arms-warrior-aggro — use weapons on Taunts, Mortal Strike at ≤ 12 Health, deck fades after turn 8–9.
 - HearthPwn, "Aggro Warrior" (Naxx era): https://www.hearthpwn.com/decks/121659-aggro-warrior — mulligan for Axe + cheap minions, Reaper's multiple charges, save Mortal Strike for lethal through Taunts.
 - hearthstone.wiki.gg, Fiery War Axe: https://hearthstone.wiki.gg/wiki/Fiery_War_Axe — cost history (2 → 3 in Sep 2017; our pool uses 3).
-- Project `meta.md` §2 (current card text) and §3.4 (Greedy Mage list and behaviour).
+- the card data (`pkg/hs-arena-0.2.2/data/cards.json`) (current card text) and §3.4 (Greedy Mage list and behaviour).

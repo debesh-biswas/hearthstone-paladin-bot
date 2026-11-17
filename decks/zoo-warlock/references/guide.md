@@ -333,5 +333,5 @@ Lightwell and Kul Tiran-buffed minions.
 | https://hearthstone.wiki.gg/wiki/Zoo_deck | Archetype definition, sticky minions vs AoE, AoE as the main weakness. |
 | https://hearthstone.wiki.gg/wiki/Hearthstone_Wiki:Archived/Zoolock | Early/mid/late plan: flood, trade efficiently, rarely go face until lethal; failed rushes lose. |
 | https://www.pocketgamer.com/articles/076724/r/ | Life Tap after board clears, keep cheap cards to rebuild vs AoE, careful with self-damage vs Mage. |
-| `meta.md` §2–3 (local) | Current card texts/costs, Hall of Fame list, Greedy Mage decklist and behaviour. |
+| the card data (`pkg/hs-arena-0.2.2/data/cards.json`) | Current card texts/costs, Hall of Fame list, Greedy Mage decklist and behaviour. |
 | fireplace source in the package (local) | Life Tap = 2 damage + draw; Sea Giant cost counts all minions on both boards; Frostwolf Warlord counts other friendly minions. |

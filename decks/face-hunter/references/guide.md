@@ -1,7 +1,7 @@
 # Face (Aggro) Hunter: Deck Guide
 
 Pool: hs-arena 0.2.2, `basic-classic-1` (modern "Legacy" Basic + Classic, nerfs applied, Hall of Fame cards removed).
-All card text below is the CURRENT text from `meta.md` §2 / `data/cards.json`, not the 2014 text.
+All card text below is the CURRENT text from the card data (`pkg/hs-arena-0.2.2/data/cards.json`) / `data/cards.json`, not the 2014 text.
 
 ## 1. Overview and win condition
 
@@ -303,4 +303,4 @@ Max burst examples:
 | https://www.hearthstonetopdecks.com/decks/face-hunter-deck-list-guide-standard/ | Mulligan split vs fast/slow decks; vs aggro prioritise board and trades, vs control chip + Steady Shot + KC finish; Houndmaster to protect board; avoid overextending into known AoE; note that Leper/Abusive nerfs forced the archetype to change. |
 | https://www.hearthstonetopdecks.com/decks/how-to-still-go-face-standard/ | Author's assessment of the nerfs: Knife Juggler nerf "not as bad", Leper Gnome and Arcane Golem nerfs "huge" (Golem no longer a finisher); Owl for early Taunts; Wolfrider as extra pressure. |
 | https://www.pocketgamer.com/hearthstone/hearthstone-strategy-guide-basic-decks | Basic Hunter plan: Beast synergy + direct damage; mulligan for 2-drops and Animal Companion; use damage cards as removal for board control when needed. |
-| `meta.md` §2-3 (project) and `pkg/hs-arena-0.2.2/src/hs_arena/_vendor/fireplace/cards/classic/hunter.py` | Current card text/stats; Greedy Mage list; engine checks: Unleash needs ≥1 enemy minion, Houndmaster can be played without a Beast, Animal Companion = Misha 4/4 Taunt / Leokk 2/4 / Huffer 4/2 Charge. |
+| the card data (`pkg/hs-arena-0.2.2/data/cards.json`) and `pkg/hs-arena-0.2.2/src/hs_arena/_vendor/fireplace/cards/classic/hunter.py` | Current card text/stats; Greedy Mage list; engine checks: Unleash needs ≥1 enemy minion, Houndmaster can be played without a Beast, Animal Companion = Misha 4/4 Taunt / Leokk 2/4 / Huffer 4/2 Charge. |
