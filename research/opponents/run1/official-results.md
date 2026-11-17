@@ -1,4 +1,4 @@
-# HW2 Results - control-paladin (Submission 1)
+# Online run 1 results: control-paladin
 
 | Opponent | Games | Wins | Losses | Draws | Forfeits | Points |
 |---|---:|---:|---:|---:|---:|---|

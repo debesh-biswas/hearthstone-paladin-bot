@@ -1,7 +1,7 @@
 # Script player: four Paladin decks compared (no model)
 
 Date: 2026-10-28. All games are local and model-free: our turn planner (`player/scripts/move.py`) plays each deck;
-opponents are the course greedy bot on our deck lists, or our planner on another list. 0 forfeits, 0 voids,
+opponents are the arena's greedy bot on our deck lists, or our planner on another list. 0 forfeits, 0 voids,
 0 illegal actions in every run below.
 
 ## Method (same for every deck)

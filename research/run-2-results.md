@@ -1,7 +1,7 @@
-# Submission 2 results and the early-game study
+# Online run 2 results and the early-game study
 
-Submission 2 = Control Paladin with −1 Guardian of Kings +1 Doomsayer (commit e414c9e), script player, Haiku.
-Source: the course results file (`results.md`, `games.json`; not tracked).
+Run 2 = Control Paladin with −1 Guardian of Kings +1 Doomsayer (commit e414c9e), script player, Haiku.
+Source: the arena's results file (`results.md`, `games.json`; not tracked).
 
 ## Score
 
@@ -12,7 +12,7 @@ Source: the course results file (`results.md`, `games.json`; not tracked).
 | Astra | 4 | 1–3 | 0 | +1 bonus |
 | **Total** | 14 | **9–5** | 0 | **9 base + 1 bonus** (ladder not included) |
 
-Submission 1 scored 12–2. Over both submissions, Bot 2 + Astra went 6/8 vs 3/8 (p ≈ 0.3), so the drop is
+Run 1 scored 12–2. Over both runs, Bot 2 + Astra went 6/8 vs 3/8 (p ≈ 0.3), so the drop is
 mostly variance, not the deck change. The opponent lists did not change; Astra showed a 2nd Mortal Coil, which
 replaces the earlier guess (2nd Leper Gnome) in `opponents/astra-zoo-warlock.json`. All 30 Astra cards are now seen.
 

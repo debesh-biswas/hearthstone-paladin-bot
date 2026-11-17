@@ -2,7 +2,7 @@
 
 ## Question and protocol
 
-Does direct play by the course's small model preserve the practical promise of the Paladin candidates, and does it use Blood Knight and the other conditional cards sensibly?
+Does direct play by the arena's small model preserve the practical promise of the Paladin candidates, and does it use Blood Knight and the other conditional cards sensibly?
 
 Three frozen decks: original aggro Paladin (`baseline-paladin`), Steady Paladin, Counter Paladin. Each has an isolated research skill in `research/haiku-skills/`. All three have identical playbook bodies; only the name and deck data differ. Instructions cover all three lists, with explicit tradeoffs for Blood Knight, Corsair, Sea Giant, Cult Master and Wisdom. No move script is supplied: the model chooses actions directly.
 
@@ -50,7 +50,7 @@ Machine-readable records: `haiku-results.json` and `haiku-summary.json`. The quo
 
 ### Separate Luna follow-up
 
-The course also permits `gpt-6-luna`, medium effort. Because the existing Codex login remained available, a separately labelled four-game follow-up tests Steady and Counter, each in both seats against **rule-based original Paladin**, seed 271027. These use copied playbooks in `research/luna-skills/` with only `model: luna` changed. No Luna result is pooled into the Haiku comparison, and this follow-up does not substitute for the unfinished Haiku-versus-Haiku matches.
+The arena also supports `gpt-6-luna`, medium effort. Because the existing Codex login remained available, a separately labelled four-game follow-up tests Steady and Counter, each in both seats against **rule-based original Paladin**, seed 271027. These use copied playbooks in `research/luna-skills/` with only `model: luna` changed. No Luna result is pooled into the Haiku comparison, and this follow-up does not substitute for the unfinished Haiku-versus-Haiku matches.
 
 ## What the evidence can answer
 

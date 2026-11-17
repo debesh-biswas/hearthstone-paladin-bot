@@ -6,7 +6,7 @@ Can a different resource plan improve our results against Control Paladin withou
 
 ## Frozen experiment
 
-The three research skills are in `research/alternative-skills/`, separate from existing tournament and submission candidates. Original Zoo and Recovery Zoo have **identical playbook bodies**. Recovery changes exactly three slots: Nightblade → Shadowflame; Frostwolf Warlord → Mortal Coil; Argent Commander → Ironbeak Owl. Original Zoo's research playbook is concept-led and differs from its older Stage B playbook, so comparisons with that historical result are not isolated deck comparisons.
+The three research skills are in `research/alternative-skills/`, separate from existing tournament candidates. Original Zoo and Recovery Zoo have **identical playbook bodies**. Recovery changes exactly three slots: Nightblade → Shadowflame; Frostwolf Warlord → Mortal Coil; Argent Commander → Ironbeak Owl. Original Zoo's research playbook is concept-led and differs from its older Stage B playbook, so comparisons with that historical result are not isolated deck comparisons.
 
 Druid uses the existing unmodified 30-card persistent-token draft, with a new concept-led playbook emphasizing persistent waves, actual Savage Roar lethal, correct Choose One options and resource limits. No silencing or other tech cards were added during the experiment.
 
@@ -71,4 +71,4 @@ Original aggro Paladin remains the established benchmark from the prior broader 
 
 Before spending a larger model budget, the next useful check is a **pilot-controlled comparison**: fixed original Zoo cards, existing versus shared research playbook, across fresh seat-balanced seeds. The new baseline's poor Mage result may reflect seed variation, playbook behavior or both; it cannot be attributed to one without that test. Only then compare targeted changes separately (e.g. one Shadowflame rather than all three substitutions) or test Druid's refill/payoff balance.
 
-All inputs matched their recorded hashes at completion. No deck/skill was edited during the batch. No additional matches, submissions or commits were launched after these 12 games. Results are a one-seed screening sample, not reliable deck win-rate estimates.
+All inputs matched their recorded hashes at completion. No deck/skill was edited during the batch. No additional matches or commits were launched after these 12 games. Results are a one-seed screening sample, not reliable deck win-rate estimates.

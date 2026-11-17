@@ -1,4 +1,4 @@
-"""Our tuned script decks vs the opponent decks rebuilt from course results (research/opponents/*.json).
+"""Our tuned script decks vs the opponent decks rebuilt from online results (research/opponents/*.json).
 
     python tools/opponents.py --games 1000
 Each opponent list is played by the greedy bot, and Astra's list also by our planner (default weights) as a

@@ -2,7 +2,7 @@
 
 **Status: legal 30-card hypothesis, not an exact recovered deck.**
 
-Reconstructed from submission 1 returned observations in `hw2-submission-1-control-paladin-results.zip`. Four games, all WARLOCK.
+Reconstructed from run 1 returned observations in the run 1 results archive. Four games, all WARLOCK.
 Public evidence confirms at least **29 slots** under a constant-list assumption; **1 slots are inferred**.
 
 Use `deck.json` for local opponent testing. `evidence.json` records per-game counts and observation seq/entity evidence. This folder is a deck recipe, not a model skill.

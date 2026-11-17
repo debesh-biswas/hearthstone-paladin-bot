@@ -1,6 +1,6 @@
-# Submission 1 results: Control Paladin (script player, Haiku)
+# Online run 1 results: Control Paladin (script player, Haiku)
 
-Source: the course results file (`results.md`, `games.json`; not tracked).
+Source: the arena's results file (`results.md`, `games.json`; not tracked).
 Analysis scripts used: a per-game summary and turn log over `games.json`; `tools/opponents.py`.
 
 ## Score
@@ -22,7 +22,7 @@ Base points are maxed. The remaining upside is the Astra bonus (+1 per win, up t
 | Bot 2 | **Face Hunter** | 21 cards seen in 4 games (Explosive Trap from its reveal); the other 9 are guessed as second copies. |
 | Astra | **Zoo Warlock** | 29 cards seen in 4 games; the 30th guessed as a 2nd Leper Gnome. Same opponent class and list in all 4 games. |
 
-A second, independent rebuild (`research/opponents/submission1/`) reached the same lists.
+A second, independent rebuild (`research/opponents/run1/`) reached the same lists.
 The card lists are identical.
 
 ## The two Astra losses
@@ -85,7 +85,7 @@ Readings:
 | Steady Paladin | 74.1 | **92.5** | 87.6 | 7.82 |
 | Pressure Hunter | 61.6 | 86.7 | 87.3 | n/a |
 
-- Expected points come from the binomial odds of the grading thresholds, plus 4 × the Astra win rate. Completion (5) is not included.
+- Expected points come from the binomial odds of the arena's scoring thresholds, plus 4 × the Astra win rate. Completion (5) is not included.
 - Warlock is the best deck against Astra but costs base points against the bots. Control is the best overall, though the top four are within 0.15.
 - Tuning Control against the Astra stand-in (one pass, 600 games per step) changed only weapon 0.6 → 0.9. Results were 78.6 / 91.4 / 94.8,
   within noise of the current weights (±2.6 at 1,000 games). **The Control weights are already as good as this tuning gets them.**

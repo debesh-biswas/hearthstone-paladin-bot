@@ -210,7 +210,7 @@ with everything. If one short, play buffs before attacks.
 
 ## 11. Matchups
 
-### Greedy Mage (course bot)
+### Greedy Mage (arena bot)
 Deck: Mana Wyrm, Sorcerer's Apprentice, Frostbolt, Arcane Missiles, Arcane Intellect, Bloodmage Thalnos,
 Harvest Golem, Yeti, Water Elemental, Fireball, Polymorph, Sen'jin, Stranglethorn Tiger, Boulderfist Ogre,
 Argent Commander, 1 Flamestrike. Plays greedily, one action at a time, no lethal planning.

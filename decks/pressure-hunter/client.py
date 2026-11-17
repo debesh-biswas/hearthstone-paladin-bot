@@ -1,4 +1,4 @@
-"""Local test only (not part of the submission): plays scripts/move.py through the seat's MCP server, no model.
+"""Local test only (not part of the skill): plays scripts/move.py through the seat's MCP server, no model.
 Adapted from the package's examples/greedy_mcp_client.
 
     hs-arena play --p1 client:decks/<deck-name> --p2 greedy

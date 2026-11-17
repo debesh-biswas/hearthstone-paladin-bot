@@ -18,7 +18,7 @@ Against the arena's three hosted opponents:
 | Astra | Zoo Warlock | **3–5** |
 
 Zero forfeits and zero illegal moves. Astra is the nemesis: when Zoo floods the board on turns 2–4 and we go
-second, Paladin often never catches up. `research/submission-2-results.md` has the post-mortem, and a deck tweak
+second, Paladin often never catches up. `research/run-2-results.md` has the post-mortem, and a deck tweak
 (−1 Equality, +1 Doomsayer) that wins ~4 points more of those games locally. It's not applied yet, if you want
 something to try.
 

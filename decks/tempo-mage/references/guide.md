@@ -55,7 +55,7 @@ CS2_023×2, EX1_556×2, CS2_029×2, CS2_033×2, CS2_022×2, CS2_182×2, EX1_028�
 
 ### Why these choices (and the cards left out)
 - **Faerie Dragon ×2 over Leper Gnome / Argent Squire.** Leper Gnome is now a 1/1, which dies to Fireblast and its
-  deathrattle does almost nothing. Faerie Dragon is a 3/2 that the course's Greedy Mage cannot hit with Frostbolt, Fireball,
+  deathrattle does almost nothing. Faerie Dragon is a 3/2 that the arena's Greedy Mage cannot hit with Frostbolt, Fireball,
   Polymorph or Fireblast. It also uses no positioning, so a simple pilot can play it well.
 - **Chillwind Yeti ×2 and Stranglethorn Tiger ×2 in place of Azure Drake ×2 and Kirin Tor Mage / secrets.** Azure Drake is
   Hall of Fame. A secret package (Kirin Tor, Mirror Entity, Counterspell) is a sequencing puzzle and is easy to misplay.
@@ -259,7 +259,7 @@ Reference reach (no board): 4 mana = 6, 6 mana = 9 (Fireball + Frostbolt), 7 man
 
 ## 10. Matchups
 
-### Greedy Mage (course Bot 1, known list)
+### Greedy Mage (arena Bot 1, known list)
 List: Mana Wyrm ×2, Sorcerer's Apprentice ×2, Frostbolt ×2, Arcane Missiles ×2, Arcane Intellect ×2, Bloodmage Thalnos, Harvest
 Golem ×2, Chillwind Yeti ×2, Water Elemental ×2, Fireball ×2, Polymorph ×2, Sen'jin Shieldmasta ×2, Stranglethorn Tiger ×2,
 Boulderfist Ogre ×2, Argent Commander ×2, Flamestrike ×1.

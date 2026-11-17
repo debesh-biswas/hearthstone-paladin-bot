@@ -1,4 +1,4 @@
-"""Reconstruct visible opponent cards from the returned submission archive; no games."""
+"""Reconstruct visible opponent cards from the returned run archive; no games."""
 import collections
 import hashlib
 import json
@@ -6,7 +6,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-SOURCE = ROOT / 'hw2-submission-1-control-paladin-results.zip'
+SOURCE = ROOT / 'run-1-results.zip'
 DEST = Path(__file__).resolve().parent
 CATALOG = {c['id']: c for c in json.loads((ROOT/'pkg/hs-arena-0.2.2/data/cards.json').read_text())['cards']}
 CONFIG = {
@@ -86,7 +86,7 @@ def reconstruct():
         (dest/'deck.json').write_text(json.dumps(deck,indent=2)+'\n')
         (dest/'evidence.json').write_text(json.dumps(info,indent=2)+'\n')
         lines=[f'# {title}', '', '**Status: legal 30-card hypothesis, not an exact recovered deck.**', '',
-               f'Reconstructed from submission 1 returned observations in `{SOURCE.name}`. Four games, all {hero}.',
+               f'Reconstructed from run 1 returned observations in `{SOURCE.name}`. Four games, all {hero}.',
                f'Public evidence confirms at least **{sum(lower.values())} slots** under a constant-list assumption; **{30-sum(lower.values())} slots are inferred**.', '',
                'Use `deck.json` for local opponent testing. `evidence.json` records per-game counts and observation seq/entity evidence. This folder is a deck recipe, not a model skill.', '',
                '| Card | Mana | G1 | G2 | G3 | G4 | Observed minimum | Reconstructed | Inferred |',

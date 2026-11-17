@@ -1,6 +1,6 @@
 # Deck research — 2026-10-27
 
-Research only. No final deck lock, no submission, no playing-skill changes. Existing `decks/` and tournament outputs are untouched. Candidate JSON files live in `research/decks/`, outside the tournament's auto-discovery directory.
+Research only. No final deck lock, no playing-skill changes. Existing `decks/` and tournament outputs are untouched. Candidate JSON files live in `research/decks/`, outside the tournament's auto-discovery directory.
 
 Follow-up: [direct Haiku/Luna evaluation](haiku-evaluation.md) records a small model-piloted sample, quota interruptions, a successful 9/9 Blood Knight and a specific missed shield interaction. Its results are separate from the rule-based screening below. Isolated research playbooks were added for that follow-up; existing playing skills remain unchanged.
 
@@ -63,7 +63,7 @@ Avoid multiplying conditional packages. Sword of Justice, Redemption, Righteousn
 
 ## Concrete deck candidates
 
-All JSON files contain exactly 30 legal cards and pass `hs_arena.deck.validate_deck_data`. They are deck data, not ready-to-submit skill folders.
+All JSON files contain exactly 30 legal cards and pass `hs_arena.deck.validate_deck_data`. They are deck data, not ready-to-play skill folders.
 
 ### Steady Paladin — practical first candidate
 
@@ -155,7 +155,7 @@ Across both batches: **Steady 523/800 (65.38%), Counter 513/800 (64.13%), origin
 
 All **2,400 games** completed with **0 draws, 0 forfeits, 0 illegal actions, 0 timeouts and 0 engine voids**. Max decision latency remains **unmeasured**. The scored candidates won 1,434 of these games; the other 966 were opponent wins. Hashes of all six distinct input deck files remained unchanged through confirmation.
 
-**Research decision:** Steady Paladin is the first candidate to develop further because it retained its advantage over the original on fresh seeds, uses fewer conditional packages, and performed best against the known graded Greedy Mage. Counter remains a live alternative; the 1.25-point combined difference between candidates is too small to claim superiority. Improvements over the original are much larger in this specific test field, but these are greedy-versus-greedy measurements, not predictions for Astra or classmates.
+**Research decision:** Steady Paladin is the first candidate to develop further because it retained its advantage over the original on fresh seeds, uses fewer conditional packages, and performed best against the known Greedy Mage bot. Counter remains a live alternative; the 1.25-point combined difference between candidates is too small to claim superiority. Improvements over the original are much larger in this specific test field, but these are greedy-versus-greedy measurements, not predictions for Astra or classmates.
 
 Reproduce an individual run using the project environment's `hs-arena`:
 

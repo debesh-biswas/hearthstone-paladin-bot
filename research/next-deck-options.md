@@ -2,7 +2,7 @@
 
 Follow-up: these theory drafts now have scripted and model-led packages. See [candidate-pilot-handoff.md](candidate-pilot-handoff.md) for implementation, offline checks and the separately recorded validation-launch incident. The original theory-only activity described below remains distinct from that later work.
 
-2026-10-28. Theorycrafting only. No matches, model evaluations or engine simulations were run for these candidates. Existing results remain unchanged. None is selected for submission; the existing player and skills are untouched. New folders contain a fixed deck JSON and concept-led strategy document, not a runnable SKILL.md. The evaluation owner can attach the established runtime/legality wrapper without confusing these drafts with validated skills.
+2026-10-28. Theorycrafting only. No matches, model evaluations or engine simulations were run for these candidates. Existing results remain unchanged. None is selected; the existing player and skills are untouched. New folders contain a fixed deck JSON and concept-led strategy document, not a runnable SKILL.md. The evaluation owner can attach the established runtime/legality wrapper without confusing these drafts with validated skills.
 
 ## What the earlier evidence does and does not say
 
@@ -55,4 +55,4 @@ Candidate-specific evidence:
 
 Every pilot should calculate immediate lethal, then necessary survival, then its deck-specific plan. Execute only current legal-action templates with current entity IDs and seq; re-read after every action, random result or rejection. Targeted battlecries require the offered target fields. Never assume an attractive theoretical sequence is legal merely because its total mana fits.
 
-No new performance numbers exist yet. Static legality is a prerequisite, not evidence of strength. These drafts deliberately remain separate from shipped skill changes and course submissions.
+No new performance numbers exist yet. Static legality is a prerequisite, not evidence of strength. These drafts deliberately remain separate from shipped skill changes.

@@ -1,5 +1,5 @@
-"""Tougher local stand-ins for the course's Bot 2 and Astra: their rebuilt lists, script-piloted, weights tuned for
-strength against our two submitted Control lists (real results: Bot 2 6/8, Astra 3/8 vs ~95% / ~80% locally).
+"""Tougher local stand-ins for the arena's Bot 2 and Astra: their rebuilt lists, script-piloted, weights tuned for
+strength against our two Control lists played online (real results: Bot 2 6/8, Astra 3/8 vs ~95% / ~80% locally).
 
     python tools/standins.py tune     # coordinate descent of each stand-in's weights; writes research/weights/standin-<opp>.json
     python tools/standins.py check    # both Control lists vs every stand-in, split by who went first
@@ -24,7 +24,7 @@ fastsim.move.MULLIGAN["bot2-face-hunter"] = {
     "with_early": {"EX1_536", "CS2_124", "EX1_538"}, "second": set()}
 
 SUB2 = ROOT / "player" / "deck.json"
-SUB1 = OUT / "control-sub1.json"  # submission 1 list: Guardian of Kings instead of Doomsayer
+SUB1 = OUT / "control-sub1.json"  # run 1 list: Guardian of Kings instead of Doomsayer
 OURS = {"sub1": SUB1, "sub2": SUB2}
 
 

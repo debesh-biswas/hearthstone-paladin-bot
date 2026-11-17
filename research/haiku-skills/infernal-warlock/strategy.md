@@ -1,6 +1,6 @@
 # infernal-warlock — theory draft
 
-Status: unplayed research candidate, 2026-10-28. Scripted and model-led pilots use this exact list. Offline validation does not establish gameplay strength or submission readiness.
+Status: unplayed research candidate, 2026-10-28. Scripted and model-led pilots use this exact list. Offline validation does not establish gameplay strength.
 
 | Copies | Mana | Card |
 |---:|---:|---|

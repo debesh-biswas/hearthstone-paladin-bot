@@ -1,4 +1,4 @@
-"""How often our planner picks Astra's real move, from the returned course games (no games played).
+"""How often our planner picks Astra's real move, from the returned online games (no games played).
 
     python tools/imitate.py games/sub1_results/games.json                 # match rate vs Astra, default weights
     python tools/imitate.py games/sub1_results/games.json --tune          # coordinate descent on the match rate

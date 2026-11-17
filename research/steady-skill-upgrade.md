@@ -4,15 +4,15 @@ Saved as `decks/steady-paladin/`: `SKILL.md`, `deck.json`, and `references/guide
 
 The new main skill explains the deck's resource advantage, weaknesses, role changes, contextual mulligan, whole-turn planning, card packages, and conversion of board advantage into lethal pressure. The companion guide adds the exact deck map, resource tradeoffs, worked decisions and all nine class matchups. Instructions explain why an action helps win instead of specifying a fixed action priority. The legal-action and session-completion safeguards remain. No move script was added.
 
-Default local model: `luna` (`gpt-6-luna`, medium), because Haiku reached its usage cap during earlier research. Final submission model and final deck remain undecided.
+Default local model: `luna` (`gpt-6-luna`, medium), because Haiku reached its usage cap during earlier research. Final model and final deck remain undecided.
 
 ## Validation
 
-- Course `hs-arena validate --no-game`: passed.
+- `hs-arena validate --no-game`: passed.
 - Deck validator: passed; JSON exactly equals the original research candidate.
 - Guide card names/quantities match the local catalog and all 30 deck slots.
 - No reserved `game/` or `scratch/` inside the skill.
-- The general skill-creator Python validator could not run because its interpreter lacks PyYAML. No dependency was installed; the course-specific validator is authoritative for this runtime and passed, including its real-game smoke test.
+- The general skill-creator Python validator could not run because its interpreter lacks PyYAML. No dependency was installed; the arena's validator is authoritative for this runtime and passed, including its real-game smoke test.
 - Isolated Luna snapshot check: selected `{"seq":34,"action":{"type":"play_card","card":22,"position":1}}`, a legal Blood Knight play before the damaging Tirion trade. Checked against the snapshot's legal template. Saved response: `steady-skill-snapshot-result.json`. The example is explicitly taught in the new skill; passing this check is a targeted regression result, not evidence of generalization.
 
 ## Full games with the exact saved files
@@ -27,4 +27,4 @@ Default local model: `luna` (`gpt-6-luna`, medium), because Haiku reached its us
 
 Both rejected actions were `CANNOT_ATTACK`: the model attempted to attack with a minion that could not attack in the current state. It recovered using the next decision and finished each game. The conceptual playbook does not guarantee legal-action adherence; these observations remain a pilot reliability concern rather than a claim that the deck is submission-ready. No claim of improved win rate is justified by these three games.
 
-Results and exact tested file hashes: `steady-skill-validation.json`. Full replays: `games/steady-skill-upgrade/`. No course submission, commit, or further test batch was launched.
+Results and exact tested file hashes: `steady-skill-validation.json`. Full replays: `games/steady-skill-upgrade/`. No commit or further test batch was launched.

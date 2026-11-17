@@ -257,7 +257,7 @@
       ],
       "notes": {
         "2": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -305,7 +305,7 @@
       ],
       "notes": {
         "1": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -353,7 +353,7 @@
       ],
       "notes": {
         "1": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -401,7 +401,7 @@
       ],
       "notes": {
         "1": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -449,7 +449,7 @@
       ],
       "notes": {
         "2": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -497,7 +497,7 @@
       ],
       "notes": {
         "2": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }
@@ -545,7 +545,7 @@
       ],
       "notes": {
         "1": [
-          "session 1 stopped before GAME OVER (course: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
+          "session 1 stopped before GAME OVER (runtime: Claude Code reported an error: You've hit your session limit \u00b7 resets 4am (America/New_York) (api status 429)); game lost (forfeit_exit). Staff may review verified course-side failures separately."
         ]
       }
     }

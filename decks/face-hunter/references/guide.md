@@ -189,7 +189,7 @@ Max burst examples:
 
 ## 11. Matchups
 
-### Greedy Mage (the course bot: Mana Wyrm, Sorcerer's Apprentice, Frostbolt, Arcane Missiles, Arcane Intellect, Water Elemental, Fireball, Polymorph, Yeti, Sen'jin, Stranglethorn Tiger, Boulderfist Ogre, Argent Commander, 1 Flamestrike)
+### Greedy Mage (the arena bot: Mana Wyrm, Sorcerer's Apprentice, Frostbolt, Arcane Missiles, Arcane Intellect, Water Elemental, Fireball, Polymorph, Yeti, Sen'jin, Stranglethorn Tiger, Boulderfist Ogre, Argent Commander, 1 Flamestrike)
 - **Favourable if fast.** Its removal is single-target and its only AoE is one 7-mana Flamestrike. It plays greedily and doesn't plan.
 - Keep Faerie Dragon (immune to its spells and Fireblast), Bloodfen Raptor, Animal Companion, Bow.
 - Kill Mana Wyrm and Sorcerer's Apprentice early with Bow / Arcane Shot / free trades: they snowball.

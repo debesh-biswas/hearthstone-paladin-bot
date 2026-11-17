@@ -108,4 +108,4 @@ PYTHONDONTWRITEBYTECODE=1 python research/tests/check_candidate_pilots.py
 
 Do not use `tools/fastsim.py --deck ...` to claim these new scripts were evaluated: that tool imports `player/scripts/move.py` and only changes the deck. Use the supplied clients, or explicitly adapt a separate evaluation harness to import each candidate's `decide` function.
 
-Compare fixed lists under separately labelled pilots, balance actual first player across fresh seeds, and record wins, forfeits, illegal actions and full state-to-action latency. Model relay overhead is not captured by the millisecond offline measurements. No promotion or course submission should follow from static checks alone.
+Compare fixed lists under separately labelled pilots, balance actual first player across fresh seeds, and record wins, forfeits, illegal actions and full state-to-action latency. Model relay overhead is not captured by the millisecond offline measurements. No promotion should follow from static checks alone.

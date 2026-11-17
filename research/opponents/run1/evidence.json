@@ -1,5 +1,5 @@
 {
-  "source": "hw2-submission-1-control-paladin-results.zip",
+  "source": "run-1-results.zip",
   "source_sha256": "831534fa1dd0e7edb002b36c8f0485b209d88b1b2fdb37ed426db6656d1e022d",
   "method": "Distinct played entity IDs per game, plus publicly revealed secrets; per-card maximum across games. No hidden deck/order access.",
   "opponents": {
