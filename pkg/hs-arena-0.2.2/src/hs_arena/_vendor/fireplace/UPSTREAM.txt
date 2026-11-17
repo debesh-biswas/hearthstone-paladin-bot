@@ -1,0 +1,18 @@
+Upstream: https://github.com/jleclanche/fireplace
+Commit:   47a2572a000db66645bb74a425a090d51f1004fa (2025-12-19 14:40:51 +0800)
+License:  AGPL-3.0 (see LICENSE in this directory)
+
+Vendored as the package hs_arena._vendor.fireplace, including fireplace/cards/CardDefs.xml
+(Git LFS object in upstream; vendored as a regular file here).
+
+Patches (everything else is byte-identical to upstream):
+1. fireplace/__init__.py: constant __version__ instead of pkg_resources.require()
+   (so the runtime imports without setuptools).
+2. fireplace/logging.py: engine logger level WARNING instead of DEBUG.
+3. fireplace/cards/__init__.py: get_script_definition() imports card set modules relative to
+   the package (import_module("%s.%s" % (__name__, cardset))) instead of the absolute
+   "fireplace.cards.<set>" so the vendored package works under its namespaced import path.
+4. fireplace/card.py: Character._set_zone() resets turns_in_play when a character enters PLAY from
+   another zone. Upstream only counted turns in play and never reset the counter, so a minion that
+   was returned to hand (Sap, Shadowstep, Vanish, Freezing Trap, Youthful Brewmaster ...) and played
+   again could attack on the turn it was replayed.

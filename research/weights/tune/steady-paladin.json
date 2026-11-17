@@ -1,0 +1,143 @@
+{
+ "deck": "decks/steady-paladin/deck.json",
+ "best": 0.9424444444444444,
+ "weights": {
+  "enemy_minion": 1.2,
+  "danger": 10,
+  "draw": 1.5
+ },
+ "runs": [
+  {
+   "w": {},
+   "win": 0.938
+  },
+  {
+   "w": {
+    "face": 0.3
+   },
+   "win": 0.9368888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.7
+   },
+   "win": 0.9348888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 1.0
+   },
+   "win": 0.9297777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2
+   },
+   "win": 0.9384444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.5
+   },
+   "win": 0.938,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.8
+   },
+   "win": 0.9337777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.25
+   },
+   "win": 0.9364444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.75
+   },
+   "win": 0.9264444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 2
+   },
+   "win": 0.9326666666666666,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10
+   },
+   "win": 0.9417777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 3
+   },
+   "win": 0.9417777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8
+   },
+   "win": 0.9417777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "taunt": 2.5
+   },
+   "win": 0.9413333333333334,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "draw": 1.5
+   },
+   "win": 0.9424444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "draw": 3
+   },
+   "win": 0.9417777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "draw": 4.5
+   },
+   "win": 0.9386666666666666,
+   "bad": 0
+  }
+ ]
+}

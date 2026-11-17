@@ -1,0 +1,7 @@
+{
+  "protocol_version": "1",
+  "pool_version": "basic-classic-1",
+  "name": "random-example",
+  "author": "course-staff",
+  "command": ["python", "agent.py"]
+}

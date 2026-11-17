@@ -35,7 +35,7 @@ def main():
     ap.add_argument("--games", type=int, default=300, help="per opponent per run")
     ap.add_argument("--seed", type=int, default=1000)
     a = ap.parse_args()
-    out_dir = fastsim.ROOT / "games" / "tune"
+    out_dir = fastsim.ROOT / "research" / "weights" / "tune"
     out_dir.mkdir(parents=True, exist_ok=True)
     for deck in a.decks:
         name = load_deck(deck).name

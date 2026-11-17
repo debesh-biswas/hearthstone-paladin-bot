@@ -1,5 +1,6 @@
-# course package (download separately, see task.md §6)
-pkg/
+# course package: unpacked engine is tracked; its venv and original download are not
+pkg/*.zip
+pkg/**/.venv/
 # envs, caches, outputs
 .venv/
 venv/

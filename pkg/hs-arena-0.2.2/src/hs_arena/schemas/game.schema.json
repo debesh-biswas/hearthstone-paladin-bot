@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hs-arena/schemas/game.schema.json",
+  "title": "game.json (game directory)",
+  "type": "object",
+  "required": ["game_id", "seed", "created_at", "runtime_version", "protocol_version", "pool_version", "players"],
+  "additionalProperties": false,
+  "properties": {
+    "game_id": {"type": "string", "minLength": 1},
+    "seed": {"type": "integer"},
+    "created_at": {"type": "string", "description": "ISO 8601 UTC"},
+    "runtime_version": {"type": "string"},
+    "protocol_version": {"const": "1"},
+    "pool_version": {"type": "string"},
+    "fireplace_commit": {"type": "string"},
+    "decision_timeout_s": {"type": "number"},
+    "illegal_limit": {"type": "integer"},
+    "players": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["index", "name", "kind", "hero_class", "deck"],
+        "additionalProperties": false,
+        "properties": {
+          "index": {"enum": [1, 2]},
+          "name": {"type": "string"},
+          "kind": {"enum": ["process", "skill", "client", "mcp", "greedy", "random"]},
+          "hero_class": {"enum": ["DRUID", "HUNTER", "MAGE", "PALADIN", "PRIEST", "ROGUE", "SHAMAN", "WARLOCK", "WARRIOR", null]},
+          "deck": {"type": ["array", "null"], "items": {"type": "string"}, "minItems": 30, "maxItems": 30}
+        }
+      }
+    }
+  }
+}

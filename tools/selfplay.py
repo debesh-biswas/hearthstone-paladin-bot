@@ -89,7 +89,7 @@ def main():
     if sp.exists():
         st = json.loads(sp.read_text())
     else:
-        tuned = {p.stem: json.loads(p.read_text()) for p in sorted((fastsim.ROOT / "games" / "tune").glob("*.json"))}
+        tuned = {p.stem: json.loads(p.read_text()) for p in sorted((fastsim.ROOT / "research" / "weights" / "tune").glob("*.json"))}
         st = {"round": 0, "phase": "sim", "done": [], "decks": {n: t["deck"] for n, t in tuned.items()},
               "weights": {n: {**fastsim.BASE_W, **t["weights"]} for n, t in tuned.items()}}
     save = lambda: sp.write_text(json.dumps(st, indent=1))  # noqa: E731

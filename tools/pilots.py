@@ -19,7 +19,7 @@ def main():
     ap.add_argument("--field-games", type=int, default=500)
     ap.add_argument("--pair-games", type=int, default=1000)
     a = ap.parse_args()
-    tuned = {p.stem: json.loads(p.read_text()) for p in sorted((fastsim.ROOT / "games" / "tune").glob("*.json"))}
+    tuned = {p.stem: json.loads(p.read_text()) for p in sorted((fastsim.ROOT / "research" / "weights" / "tune").glob("*.json"))}
     res = {}
     for d in a.skills:
         me = f"pilot:{fastsim.ROOT / 'decks' / d}"

@@ -1,6 +1,6 @@
 # Submission 1 results: Control Paladin (script player, Haiku)
 
-Source: the course results file `hw2-submission-1-control-paladin-results.zip` (`results.md`, `games.json`; not tracked).
+Source: the course results file (`results.md`, `games.json`; not tracked).
 Analysis scripts used: a per-game summary and turn log over `games.json`; `tools/opponents.py`.
 
 ## Score

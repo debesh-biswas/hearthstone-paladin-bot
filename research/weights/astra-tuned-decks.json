@@ -1,0 +1,18 @@
+{
+ "control-paladin": {
+  "face": 0.135,
+  "our_hp": 3.367,
+  "hand_base": 0.0,
+  "hand_per_cost": 0.335,
+  "draw": 3.015,
+  "enemy_minion": 1.206,
+  "taunt": 0.67,
+  "weapon": 0.9,
+  "dead_next_turn": 60.0,
+  "danger": 15.0,
+  "reach": 4.5,
+  "our_clock": 12.0,
+  "overload": 1.0,
+  "secret": 3.0
+ }
+}

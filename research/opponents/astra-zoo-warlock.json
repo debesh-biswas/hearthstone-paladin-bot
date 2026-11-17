@@ -11,7 +11,6 @@
   "EX1_019",
   "EX1_019",
   "EX1_029",
-  "EX1_029",
   "EX1_046",
   "EX1_046",
   "EX1_093",
@@ -20,6 +19,7 @@
   "EX1_096",
   "EX1_162",
   "EX1_162",
+  "EX1_302",
   "EX1_302",
   "EX1_308",
   "EX1_308",
@@ -43,7 +43,7 @@
   "EX1_093": 2,
   "EX1_096": 2,
   "EX1_162": 2,
-  "EX1_302": 1,
+  "EX1_302": 2,
   "EX1_308": 2,
   "EX1_319": 2,
   "EX1_393": 2,
@@ -51,8 +51,6 @@
   "EX1_597": 1,
   "NEW1_019": 2
  },
- "guessed": {
-  "EX1_029": 1
- },
- "note": "29 cards seen in 4 games. Guess for the 30th: second Leper Gnome (could be a 2nd Mortal Coil or Imp Master)."
+ "guessed": {},
+ "note": "All 30 cards seen across 8 games (submissions 1 and 2). Submission 2 showed a 2nd Mortal Coil, so the earlier guess (2nd Leper Gnome) is replaced."
 }

@@ -1,0 +1,137 @@
+{
+ "deck": "research/decks/counter-paladin.json",
+ "best": 0.9435555555555556,
+ "weights": {
+  "enemy_minion": 1.2,
+  "danger": 10,
+  "our_hp": 8
+ },
+ "runs": [
+  {
+   "w": {},
+   "win": 0.9362222222222222
+  },
+  {
+   "w": {
+    "face": 0.3
+   },
+   "win": 0.9348888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.7
+   },
+   "win": 0.9351111111111111,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 1.0
+   },
+   "win": 0.9331111111111111,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2
+   },
+   "win": 0.9424444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.5
+   },
+   "win": 0.9362222222222222,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.8
+   },
+   "win": 0.9282222222222222,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.25
+   },
+   "win": 0.9402222222222222,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.75
+   },
+   "win": 0.93,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 2
+   },
+   "win": 0.9395555555555556,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10
+   },
+   "win": 0.9426666666666667,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 3
+   },
+   "win": 0.9422222222222222,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8
+   },
+   "win": 0.9435555555555556,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8,
+    "taunt": 2.5
+   },
+   "win": 0.9384444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8,
+    "draw": 1.5
+   },
+   "win": 0.9428888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8,
+    "draw": 4.5
+   },
+   "win": 0.9388888888888889,
+   "bad": 0
+  }
+ ]
+}

@@ -18,7 +18,7 @@ import selfplay  # noqa: E402
 TOP5 = ["control-paladin", "infernal-warlock", "counter-paladin", "steady-paladin", "pressure-hunter"]
 ASTRA = "script:research/opponents/astra-zoo-warlock.json"
 BOTS = ["research/opponents/bot1-greedy-mage.json", "research/opponents/bot2-face-hunter.json"]
-TUNED = fastsim.ROOT / "games" / "astra" / "weights.json"
+TUNED = fastsim.ROOT / "research" / "weights" / "astra-tuned-decks.json"
 
 
 def pct(out, opp=None):
@@ -31,8 +31,8 @@ def main():
     ap.add_argument("--tune", nargs="*", default=[])
     ap.add_argument("--games", type=int, default=1000)
     a = ap.parse_args()
-    st = json.loads((fastsim.ROOT / "games" / "selfplay" / "state.json").read_text())
-    astra_w = json.loads((fastsim.ROOT / "games" / "astra_strong.json").read_text())
+    st = json.loads((fastsim.ROOT / "research" / "weights" / "selfplay-state.json").read_text())
+    astra_w = json.loads((fastsim.ROOT / "research" / "weights" / "astra-strong.json").read_text())
     tuned = json.loads(TUNED.read_text()) if TUNED.exists() else {}
     for n in a.tune:
         tuned[n] = selfplay.tune(n, st["decks"][n], tuned.get(n, st["weights"][n]), [ASTRA], {ASTRA: astra_w},

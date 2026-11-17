@@ -24,7 +24,7 @@ def main():
     ap.add_argument("--games", type=int, default=1000)
     ap.add_argument("--seed", type=int, default=70000)
     a = ap.parse_args()
-    st = json.loads((fastsim.ROOT / "games" / "selfplay" / "state.json").read_text())
+    st = json.loads((fastsim.ROOT / "research" / "weights" / "selfplay-state.json").read_text())
     rows = {}
     for n, deck in st["decks"].items():
         out, bad = fastsim.run(a.games, st["weights"][n], deck, field=list(OPPS.values()), seed=a.seed)

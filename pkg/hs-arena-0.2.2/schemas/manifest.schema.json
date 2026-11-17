@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hs-arena/schemas/manifest.schema.json",
+  "title": "manifest.json (submission root), protocol version 1",
+  "type": "object",
+  "required": ["protocol_version", "pool_version", "name", "author", "command"],
+  "properties": {
+    "protocol_version": {"const": "1"},
+    "pool_version": {"const": "basic-classic-1"},
+    "name": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.\\-]{0,63}$"},
+    "author": {"type": "string", "minLength": 1},
+    "command": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1},
+      "description": "executed with the submission directory as cwd; a leading \"python\" is replaced by the runtime's interpreter"
+    }
+  }
+}

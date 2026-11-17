@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hs-arena/schemas/result.schema.json",
+  "title": "result.json (game directory)",
+  "type": "object",
+  "required": ["game_id", "winner", "reason", "turns", "illegal_counts", "restarts", "timeouts", "duration_s", "decisions"],
+  "additionalProperties": false,
+  "$defs": {
+    "perPlayer": {
+      "type": "object",
+      "required": ["1", "2"],
+      "additionalProperties": false,
+      "properties": {"1": {"type": "integer", "minimum": 0}, "2": {"type": "integer", "minimum": 0}}
+    }
+  },
+  "properties": {
+    "game_id": {"type": "string"},
+    "seed": {"type": "integer"},
+    "winner": {"enum": [1, 2, null]},
+    "reason": {"enum": ["hero_death", "draw", "forfeit_illegal", "forfeit_timeout", "forfeit_exit", "forfeit_restart", "concede", "void_engine_error", "max_turns", "aborted"]},
+    "first_player": {"enum": [1, 2, null]},
+    "turns": {"type": "integer", "minimum": 0},
+    "illegal_counts": {"$ref": "#/$defs/perPlayer"},
+    "restarts": {"$ref": "#/$defs/perPlayer"},
+    "timeouts": {"$ref": "#/$defs/perPlayer"},
+    "duration_s": {"type": "number", "minimum": 0},
+    "decisions": {"$ref": "#/$defs/perPlayer", "description": "accepted actions per player"},
+    "players": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["index", "name", "kind"],
+        "additionalProperties": false,
+        "properties": {
+          "index": {"enum": [1, 2]},
+          "name": {"type": "string"},
+          "kind": {"enum": ["process", "skill", "client", "mcp", "greedy", "random"]}
+        }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "description": "seat notes per player, e.g. skill-seat restarts and warnings (only when there are any)",
+      "additionalProperties": false,
+      "properties": {"1": {"type": "array", "items": {"type": "string"}}, "2": {"type": "array", "items": {"type": "string"}}}
+    },
+    "engine_error": {
+      "type": "object",
+      "required": ["message", "card_ids"],
+      "additionalProperties": false,
+      "properties": {"message": {"type": "string"}, "card_ids": {"type": "array", "items": {"type": "string"}}}
+    }
+  }
+}

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hs_arena"
+dynamic = ["version"]
+description = "Hearthstone Agent Arena runtime (CS 598 HW2): plays students' skills with a course agent on the fireplace simulator"
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+requires-python = ">=3.10"
+dependencies = [
+    "hearthstone==9.21.1",
+    "hearthstone_data==251952.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "jsonschema>=4.18"]
+
+[project.scripts]
+hs-arena = "hs_arena.cli:main"
+
+[tool.hatch.version]
+path = "hs_arena/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hs_arena"]
+
+[tool.hatch.build.targets.sdist]
+include = ["hs_arena", "docs", "examples", "tests", "tools", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "slow: long-running acceptance tests (stability, property tests); deselect with -m 'not slow'",
+]

@@ -13,7 +13,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import fastsim  # noqa: E402
 
-TUNE = fastsim.ROOT / "games" / "tune"
+TUNE = fastsim.ROOT / "research" / "weights" / "tune"
 
 
 def main():

@@ -1,0 +1,16 @@
+{
+ "face": 0.224,
+ "our_hp": 5.0,
+ "hand_base": 0.0,
+ "hand_per_cost": 0.335,
+ "draw": 3.0,
+ "enemy_minion": 1.005,
+ "taunt": 1.005,
+ "weapon": 0.6,
+ "dead_next_turn": 60.0,
+ "danger": 5.0,
+ "reach": 3,
+ "our_clock": 12.0,
+ "overload": 1.0,
+ "secret": 3.0
+}

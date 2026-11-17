@@ -1,0 +1,56 @@
+Game g_20261101_000017 | seq 21 | turn 14 | you are player 1 | phase main
+Answer within 180 s (deadline_epoch_s 1761955200.0).
+YOUR LAST ACTION WAS REJECTED: ILLEGAL_TARGET - target 999 is not a valid target for card 24 (Fireball); one of [4, 7, 9, 22, 37, 64, 65] (illegal actions 2/3; reaching the limit forfeits the game)
+
+OPPONENT: Jaina Proudmoore (MAGE) #37 health 20
+  hero power: Fireblast #38 (2 mana) - Deal 1 damage.
+  mana crystals 7 | hand 4 | deck 17 | secrets 1 | fatigue 0
+  board:
+    [0] #65 Boulderfist Ogre 6/3
+    [1] #64 Boulderfist Ogre 6/7
+  graveyard: Arcane Missiles, Frostbolt, Fireball, Sorcerer's Apprentice, Arcane Intellect, Bloodmage Thalnos, Arcane Missiles
+YOU: Jaina Proudmoore (MAGE) #4 health 20
+  hero power: Fireblast #5 (2 mana) usable - Deal 1 damage.
+  mana 7/7 | deck 17 | fatigue 0
+  board:
+    [0] #22 Water Elemental 3/5 [can attack] - Freeze any character damaged by this minion.
+    [1] #9 Sorcerer's Apprentice 3/1 [can attack] - Your spells cost (1) less.
+    [2] #7 Mana Wyrm 2/2 [can attack] - Whenever you cast a spell, gain +1 Attack.
+  hand:
+    #24 Fireball (3 mana spell) [playable] - Deal 6 damage.
+    #35 Flamestrike (6 mana spell) [playable] - Deal 4 damage to all enemy minions.
+    #10 Frostbolt (1 mana spell) [playable] - Deal 3 damage to a character and Freeze it.
+    #15 Arcane Intellect (2 mana spell) [playable] - Draw 2 cards.
+    #19 Chillwind Yeti (4 mana minion 4/5) [playable]
+  secrets: #90 Counterspell
+  graveyard: Damaged Golem, Damaged Golem, Arcane Missiles, The Coin, Harvest Golem, Harvest Golem, Arcane Intellect, Chillwind Yeti
+
+EVENTS since your previous state:
+  P1 (you) ends the turn.
+  --- Turn 13: P2 (opponent) ---
+  P2 (opponent) draws a card.
+  P2 (opponent) plays Boulderfist Ogre #64 at position 1.
+  P2 (opponent): Boulderfist Ogre #65 attacks Chillwind Yeti #20.
+  Chillwind Yeti #20 (P1 (you)) takes 6 damage from Boulderfist Ogre #65, health -1.
+  Boulderfist Ogre #65 (P2 (opponent)) takes 4 damage from Chillwind Yeti #20, health 3.
+  Chillwind Yeti #20 (P1 (you)) dies.
+  P2 (opponent) plays Arcane Missiles #46.
+  Sorcerer's Apprentice #9 (P1 (you)) takes 1 damage from Arcane Missiles #46, health 1.
+  Jaina Proudmoore #4 (P1 (you)) takes 1 damage from Arcane Missiles #46, health 20.
+  Mana Wyrm #7 (P1 (you)) takes 1 damage from Arcane Missiles #46, health 2.
+  P2 (opponent) ends the turn.
+  --- Turn 14: P1 (you) ---
+  P1 (you) draws Chillwind Yeti #19.
+
+LEGAL ACTIONS:
+  1. play_card card=24 (Fireball, 3 mana) target in {#4 your hero, #7 your Mana Wyrm 2/2, #9 your Sorcerer's Apprentice 3/1, #22 your Water Elemental 3/5, #37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  2. play_card card=35 (Flamestrike, 6 mana) (no target)
+  3. play_card card=10 (Frostbolt, 1 mana) target in {#4 your hero, #7 your Mana Wyrm 2/2, #9 your Sorcerer's Apprentice 3/1, #22 your Water Elemental 3/5, #37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  4. play_card card=15 (Arcane Intellect, 2 mana) (no target)
+  5. play_card card=19 (Chillwind Yeti, 4 mana) position in [0, 1, 2, 3] (default rightmost) (no target)
+  6. attack attacker=22 (your Water Elemental 3/5) target in {#37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  7. attack attacker=9 (your Sorcerer's Apprentice 3/1) target in {#37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  8. attack attacker=7 (your Mana Wyrm 2/2) target in {#37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  9. hero_power (Fireblast, 2 mana) target in {#4 your hero, #7 your Mana Wyrm 2/2, #9 your Sorcerer's Apprentice 3/1, #22 your Water Elemental 3/5, #37 enemy hero, #64 enemy Boulderfist Ogre 6/7, #65 enemy Boulderfist Ogre 6/3}
+  10. end_turn
+  11. concede

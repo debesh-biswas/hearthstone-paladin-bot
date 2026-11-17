@@ -1,0 +1,10 @@
+# Cards excluded from the pool because of engine bugs found during testing.
+# Format: CARD_ID  # one-line reason
+# Random generators that draw from the whole fireplace collection (~9,000 scripts, not just the pool); a generated
+# out-of-pool card crashed the engine in the A5 stability run (Tome of Intellect -> Puzzle Box of Yogg-Saron, KeyError).
+EX1_180  # Tome of Intellect: adds a random Mage spell from any set (engine crash via generated ULD_216)
+EX1_182  # Pilfer: adds a random card of another class from any set
+EX1_181  # Call of the Void: adds a random Demon from any set
+EX1_189  # Brightwing: adds a random Legendary minion from any set
+EX1_188  # Barrens Stablehand: summons a random Beast from any set
+EX1_320  # Bane of Doom: summons a random Demon from any set

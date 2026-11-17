@@ -65,9 +65,9 @@ def pct(o, k):
 
 def main():
     from hs_arena.deck import validate_deck_data
-    st = json.loads((ROOT / "games" / "selfplay" / "state.json").read_text())
+    st = json.loads((ROOT / "research" / "weights" / "selfplay-state.json").read_text())
     w = st["weights"]["control-paladin"]
-    aw = json.loads((ROOT / "games" / "astra_strong.json").read_text())
+    aw = json.loads((ROOT / "research" / "weights" / "astra-strong.json").read_text())
     swaps = SCREEN if sys.argv[1] == "screen" else [""] + CHECK
     others = [n for n in st["decks"] if n != "control-paladin"]
     if sys.argv[1] == "screen":

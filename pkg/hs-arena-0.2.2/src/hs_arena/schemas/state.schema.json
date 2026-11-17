@@ -1,0 +1,1885 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hs-arena/schemas/state.schema.json",
+  "title": "state.json (runtime -> agent), protocol version 1",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "game_id",
+    "seq",
+    "player",
+    "turn",
+    "phase",
+    "timeout_s",
+    "deadline_epoch_s",
+    "you",
+    "opponent",
+    "choice",
+    "legal_actions",
+    "events",
+    "last_action_result",
+    "result"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "protocol_version": {
+      "const": "1"
+    },
+    "game_id": {
+      "type": "string"
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "player": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "turn": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "global turn counter; 0 during the mulligan"
+    },
+    "phase": {
+      "enum": [
+        "deck_submission",
+        "mulligan",
+        "main",
+        "choice",
+        "game_over"
+      ]
+    },
+    "timeout_s": {
+      "type": "number"
+    },
+    "deadline_epoch_s": {
+      "type": "number"
+    },
+    "you": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/you"
+        }
+      ]
+    },
+    "opponent": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/opponent"
+        }
+      ]
+    },
+    "deck_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pool_version",
+        "hero_classes",
+        "deck_size",
+        "max_copies",
+        "max_legendary_copies"
+      ],
+      "properties": {
+        "pool_version": {
+          "type": "string"
+        },
+        "hero_classes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "deck_size": {
+          "const": 30
+        },
+        "max_copies": {
+          "const": 2
+        },
+        "max_legendary_copies": {
+          "const": 1
+        }
+      }
+    },
+    "choice": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "kind",
+            "source"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "mulligan",
+                "discover",
+                "choice"
+              ]
+            },
+            "source": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/ref"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "legal_actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/template"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "last_action_result": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "accepted",
+            "error",
+            "message",
+            "illegal_count",
+            "illegal_limit"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "accepted": {
+              "const": false
+            },
+            "error": {
+              "$ref": "#/$defs/errorCode"
+            },
+            "message": {
+              "type": "string"
+            },
+            "illegal_count": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "illegal_limit": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      ]
+    },
+    "result": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "winner",
+            "you_won",
+            "reason"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "winner": {
+              "enum": [
+                1,
+                2,
+                null
+              ]
+            },
+            "you_won": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "reason": {
+              "$ref": "#/$defs/reason"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "deck_submission"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "deck_rules"
+        ],
+        "properties": {
+          "you": {
+            "type": "null"
+          },
+          "opponent": {
+            "type": "null"
+          },
+          "turn": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "enum": [
+              "mulligan",
+              "main",
+              "choice"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "you": {
+            "type": "object"
+          },
+          "opponent": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "phase": {
+            "const": "game_over"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "result": {
+            "type": "object"
+          },
+          "legal_actions": {
+            "maxItems": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "result": {
+            "type": "null"
+          },
+          "legal_actions": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "player": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "errorCode": {
+      "enum": [
+        "BAD_JSON",
+        "SEQ_MISMATCH",
+        "WRONG_PHASE",
+        "UNKNOWN_ACTION_TYPE",
+        "NOT_YOUR_ENTITY",
+        "CARD_NOT_PLAYABLE",
+        "TARGET_REQUIRED",
+        "ILLEGAL_TARGET",
+        "ILLEGAL_POSITION",
+        "CHOOSE_REQUIRED",
+        "ILLEGAL_CHOICE",
+        "CANNOT_ATTACK",
+        "HERO_POWER_UNUSABLE",
+        "AGENT_EXITED",
+        "TIMEOUT",
+        "INVALID_DECK"
+      ]
+    },
+    "reason": {
+      "enum": [
+        "hero_death",
+        "draw",
+        "forfeit_illegal",
+        "forfeit_timeout",
+        "forfeit_exit",
+        "forfeit_restart",
+        "concede",
+        "void_engine_error",
+        "max_turns",
+        "aborted"
+      ]
+    },
+    "heroClass": {
+      "enum": [
+        "DRUID",
+        "HUNTER",
+        "MAGE",
+        "PALADIN",
+        "PRIEST",
+        "ROGUE",
+        "SHAMAN",
+        "WARLOCK",
+        "WARRIOR",
+        "NEUTRAL"
+      ]
+    },
+    "ref": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "card_id",
+        "name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/id"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "card_id",
+        "name",
+        "hero_class",
+        "health",
+        "max_health",
+        "armor",
+        "attack",
+        "can_attack",
+        "frozen",
+        "immune"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/id"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "hero_class": {
+          "$ref": "#/$defs/heroClass"
+        },
+        "health": {
+          "type": "integer"
+        },
+        "max_health": {
+          "type": "integer"
+        },
+        "armor": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attack": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "can_attack": {
+          "type": "boolean"
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "immune": {
+          "type": "boolean"
+        }
+      }
+    },
+    "heroPower": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "entity_id",
+            "card_id",
+            "name",
+            "cost",
+            "usable",
+            "text"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "entity_id": {
+              "$ref": "#/$defs/id"
+            },
+            "card_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "cost": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "usable": {
+              "type": "boolean"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "weapon": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": [
+            "entity_id",
+            "card_id",
+            "name",
+            "attack",
+            "durability"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "entity_id": {
+              "$ref": "#/$defs/id"
+            },
+            "card_id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "attack": {
+              "type": "integer"
+            },
+            "durability": {
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "minion": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "card_id",
+        "name",
+        "attack",
+        "health",
+        "max_health",
+        "can_attack",
+        "taunt",
+        "divine_shield",
+        "frozen",
+        "stealth",
+        "windfury",
+        "charge",
+        "poisonous",
+        "deathrattle",
+        "spell_damage",
+        "silenced",
+        "text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/id"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "attack": {
+          "type": "integer"
+        },
+        "health": {
+          "type": "integer"
+        },
+        "max_health": {
+          "type": "integer"
+        },
+        "can_attack": {
+          "type": "boolean"
+        },
+        "taunt": {
+          "type": "boolean"
+        },
+        "divine_shield": {
+          "type": "boolean"
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "stealth": {
+          "type": "boolean"
+        },
+        "windfury": {
+          "type": "boolean"
+        },
+        "charge": {
+          "type": "boolean"
+        },
+        "poisonous": {
+          "type": "boolean"
+        },
+        "deathrattle": {
+          "type": "boolean"
+        },
+        "spell_damage": {
+          "type": "integer"
+        },
+        "silenced": {
+          "type": "boolean"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "handCard": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "card_id",
+        "name",
+        "type",
+        "cost",
+        "text",
+        "playable"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/id"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "MINION",
+            "SPELL",
+            "WEAPON",
+            "HERO"
+          ]
+        },
+        "cost": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attack": {
+          "type": "integer"
+        },
+        "health": {
+          "type": "integer"
+        },
+        "durability": {
+          "type": "integer"
+        },
+        "text": {
+          "type": "string"
+        },
+        "playable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sideCommon": {
+      "type": "object",
+      "required": [
+        "hero",
+        "hero_power",
+        "weapon",
+        "mana",
+        "max_mana",
+        "overloaded",
+        "overload_next_turn",
+        "board",
+        "deck_remaining",
+        "fatigue",
+        "graveyard"
+      ],
+      "properties": {
+        "hero": {
+          "$ref": "#/$defs/hero"
+        },
+        "hero_power": {
+          "$ref": "#/$defs/heroPower"
+        },
+        "weapon": {
+          "$ref": "#/$defs/weapon"
+        },
+        "mana": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_mana": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "overloaded": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "overload_next_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "board": {
+          "type": "array",
+          "maxItems": 7,
+          "items": {
+            "$ref": "#/$defs/minion"
+          }
+        },
+        "deck_remaining": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fatigue": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "graveyard": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "card_id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "you": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sideCommon"
+        }
+      ],
+      "type": "object",
+      "required": [
+        "hand",
+        "secrets",
+        "deck_remaining_counts"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
+        "hand": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "$ref": "#/$defs/handCard"
+          }
+        },
+        "secrets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "entity_id",
+              "card_id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "deck_remaining_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "opponent": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/sideCommon"
+        }
+      ],
+      "type": "object",
+      "required": [
+        "hand_size",
+        "secrets_count"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
+        "hand_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "secrets_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "chooseOption": {
+      "type": "object",
+      "required": [
+        "entity_id",
+        "card_id",
+        "name",
+        "text",
+        "targets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "$ref": "#/$defs/id"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "targets": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/ids",
+              "minItems": 1
+            }
+          ]
+        }
+      }
+    },
+    "template": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "submit_deck",
+            "play_card",
+            "attack",
+            "hero_power",
+            "end_turn",
+            "concede",
+            "mulligan",
+            "choose"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "play_card"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "card",
+              "targets",
+              "positions",
+              "choose"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": true,
+              "card": {
+                "$ref": "#/$defs/id"
+              },
+              "targets": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/ids",
+                    "minItems": 1
+                  }
+                ]
+              },
+              "positions": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 7,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 6
+                    }
+                  }
+                ]
+              },
+              "choose": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/$defs/chooseOption"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "attack"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "attacker",
+              "targets"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": true,
+              "attacker": {
+                "$ref": "#/$defs/id"
+              },
+              "targets": {
+                "$ref": "#/$defs/ids",
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "hero_power"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "targets"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": true,
+              "targets": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/ids",
+                    "minItems": 1
+                  }
+                ]
+              },
+              "choose": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/$defs/chooseOption"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "submit_deck",
+                  "end_turn",
+                  "concede"
+                ]
+              }
+            }
+          },
+          "then": {
+            "additionalProperties": false,
+            "properties": {
+              "type": true
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mulligan"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "min",
+              "max"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": true,
+              "options": {
+                "$ref": "#/$defs/ids"
+              },
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "max": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "choose"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "options",
+              "min",
+              "max"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "type": true,
+              "options": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "entity_id",
+                    "card_id",
+                    "name",
+                    "type",
+                    "text"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "entity_id": {
+                      "$ref": "#/$defs/id"
+                    },
+                    "card_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "cost": {
+                      "type": "integer"
+                    },
+                    "attack": {
+                      "type": "integer"
+                    },
+                    "health": {
+                      "type": "integer"
+                    },
+                    "text": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "min": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "max": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "event"
+      ],
+      "properties": {
+        "event": {
+          "enum": [
+            "deck_submitted",
+            "game_start",
+            "turn_start",
+            "draw",
+            "mulligan",
+            "play_card",
+            "choose",
+            "hero_power",
+            "attack",
+            "damage",
+            "heal",
+            "armor_gained",
+            "summon",
+            "death",
+            "divine_shield_lost",
+            "leave_board",
+            "secret_played",
+            "secret_revealed",
+            "weapon_equipped",
+            "weapon_destroyed",
+            "end_turn",
+            "illegal_action",
+            "agent_restart",
+            "game_over",
+            "agent_failure"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "deck_submitted"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "game_start"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "first_player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "first_player": {
+                "$ref": "#/$defs/player"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "turn_start"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "turn",
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "turn": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "player": {
+                "$ref": "#/$defs/player"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "draw"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "fatigue_damage": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "mulligan"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "replaced"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "replaced": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "replaced_card_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "drawn_card_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "play_card"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "card_id",
+              "name",
+              "entity_id",
+              "cost",
+              "target",
+              "position",
+              "choose"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "cost": {
+                "type": "integer"
+              },
+              "target": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/ref"
+                  }
+                ]
+              },
+              "position": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "choose": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "object",
+                    "required": [
+                      "card_id",
+                      "name"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                      "card_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "choose"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "hero_power"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "card_id",
+              "name",
+              "target"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "target": {
+                "oneOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "$ref": "#/$defs/ref"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "attack"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "attacker",
+              "target"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "attacker": {
+                "$ref": "#/$defs/ref"
+              },
+              "target": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "heal"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "entity_id",
+              "card_id",
+              "name",
+              "amount",
+              "health_after"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "health_after": {
+                "type": "integer"
+              },
+              "source": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "damage"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "entity_id",
+              "card_id",
+              "name",
+              "amount",
+              "health_after"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "health_after": {
+                "type": "integer"
+              },
+              "armor_absorbed": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "armor_after": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "source": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "armor_gained"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "entity_id",
+              "card_id",
+              "name",
+              "amount",
+              "armor_after"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "armor_after": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "source": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "enum": [
+                  "summon",
+                  "death",
+                  "divine_shield_lost",
+                  "leave_board"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "entity_id",
+              "card_id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "entity_id": {
+                "$ref": "#/$defs/id"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "secret_played"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "enum": [
+                  "secret_revealed",
+                  "weapon_destroyed"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "card_id",
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "weapon_equipped"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "card_id",
+              "name",
+              "attack",
+              "durability"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "card_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "attack": {
+                "type": "integer"
+              },
+              "durability": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "end_turn"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "illegal_action"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "error",
+              "illegal_count"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "error": {
+                "$ref": "#/$defs/errorCode"
+              },
+              "illegal_count": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "agent_restart"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "restart_count"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "restart_count": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "game_over"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "winner",
+              "reason"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "winner": {
+                "enum": [
+                  1,
+                  2,
+                  null
+                ]
+              },
+              "reason": {
+                "$ref": "#/$defs/reason"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "event": {
+                "const": "agent_failure"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "player",
+              "error"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "event": true,
+              "player": {
+                "$ref": "#/$defs/player"
+              },
+              "error": {
+                "enum": [
+                  "TIMEOUT",
+                  "AGENT_EXITED"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hs-arena/schemas/action.schema.json",
+  "title": "action.json (agent -> runtime), protocol version 1",
+  "description": "Unknown extra fields are ignored by the runtime and never logged.",
+  "type": "object",
+  "required": ["seq", "action"],
+  "properties": {
+    "seq": {"type": "integer", "minimum": 1, "description": "must echo the seq of the state being answered"},
+    "action": {"$ref": "#/$defs/action"}
+  },
+  "$defs": {
+    "id": {"type": "integer", "minimum": 1},
+    "optionalId": {"type": ["integer", "null"], "minimum": 1},
+    "action": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {"enum": ["submit_deck", "play_card", "attack", "hero_power", "end_turn", "concede", "mulligan", "choose"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"type": {"const": "submit_deck"}}},
+          "then": {
+            "required": ["hero_class", "cards"],
+            "properties": {
+              "hero_class": {"type": "string"},
+              "cards": {"type": "array", "items": {"type": "string"}, "minItems": 30, "maxItems": 30}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "play_card"}}},
+          "then": {
+            "required": ["card"],
+            "properties": {
+              "card": {"$ref": "#/$defs/id"},
+              "target": {"$ref": "#/$defs/optionalId"},
+              "position": {"type": ["integer", "null"], "minimum": 0, "maximum": 7},
+              "choose": {"$ref": "#/$defs/optionalId"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "attack"}}},
+          "then": {
+            "required": ["attacker", "target"],
+            "properties": {"attacker": {"$ref": "#/$defs/id"}, "target": {"$ref": "#/$defs/id"}}
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "hero_power"}}},
+          "then": {
+            "properties": {"target": {"$ref": "#/$defs/optionalId"}, "choose": {"$ref": "#/$defs/optionalId"}}
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "mulligan"}}},
+          "then": {
+            "properties": {"replace": {"type": "array", "items": {"$ref": "#/$defs/id"}, "uniqueItems": true}}
+          }
+        },
+        {
+          "if": {"properties": {"type": {"const": "choose"}}},
+          "then": {
+            "required": ["options"],
+            "properties": {
+              "options": {"type": "array", "items": {"$ref": "#/$defs/id"}, "minItems": 1, "uniqueItems": true}
+            }
+          }
+        }
+      ]
+    }
+  }
+}

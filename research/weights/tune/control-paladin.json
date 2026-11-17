@@ -1,0 +1,154 @@
+{
+ "deck": "decks/control-paladin/deck.json",
+ "best": 0.9482222222222222,
+ "weights": {
+  "face": 0.3,
+  "enemy_minion": 1.2,
+  "danger": 10,
+  "draw": 4.5
+ },
+ "runs": [
+  {
+   "w": {},
+   "win": 0.9255555555555556
+  },
+  {
+   "w": {
+    "face": 0.3
+   },
+   "win": 0.9293333333333333,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.5
+   },
+   "win": 0.9255555555555556,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.7
+   },
+   "win": 0.9184444444444444,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 1.0
+   },
+   "win": 0.9082222222222223,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2
+   },
+   "win": 0.942,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.5
+   },
+   "win": 0.9293333333333333,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.8
+   },
+   "win": 0.9148888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.25
+   },
+   "win": 0.9417777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "hand_per_cost": 0.75
+   },
+   "win": 0.9177777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 2
+   },
+   "win": 0.94,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10
+   },
+   "win": 0.9477777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 3
+   },
+   "win": 0.9451111111111111,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "our_hp": 8
+   },
+   "win": 0.9468888888888889,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "taunt": 2.5
+   },
+   "win": 0.9457777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "draw": 1.5
+   },
+   "win": 0.9437777777777778,
+   "bad": 0
+  },
+  {
+   "w": {
+    "face": 0.3,
+    "enemy_minion": 1.2,
+    "danger": 10,
+    "draw": 4.5
+   },
+   "win": 0.9482222222222222,
+   "bad": 0
+  }
+ ]
+}

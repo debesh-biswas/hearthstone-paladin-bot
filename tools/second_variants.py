@@ -45,9 +45,9 @@ for i, (changes, rule) in enumerate(VARIANTS.values()):
 def main():
     from hs_arena.deck import validate_deck_data
     OUT.mkdir(parents=True, exist_ok=True)
-    st = json.loads((fastsim.ROOT / "games" / "selfplay" / "state.json").read_text())
+    st = json.loads((fastsim.ROOT / "research" / "weights" / "selfplay-state.json").read_text())
     w = st["weights"]["control-paladin"]
-    aw = json.loads((fastsim.ROOT / "games" / "astra_strong.json").read_text())
+    aw = json.loads((fastsim.ROOT / "research" / "weights" / "astra-strong.json").read_text())
     astra = "script:research/opponents/astra-zoo-warlock.json"
     bots = ["research/opponents/bot1-greedy-mage.json", "research/opponents/bot2-face-hunter.json"]
     print("Fresh seeds 96000+. Astra: 2,000 games (about half going second); bots: 1,000 each.\n")
